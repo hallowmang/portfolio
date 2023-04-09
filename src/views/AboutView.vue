@@ -13,6 +13,7 @@
           <div class="icons">
             <fa :icon="['fab', 'html5']" />
             <fa :icon="['fab', 'css3-alt']" />
+            <fa :icon="['fab', 'js']" />
             <fa :icon="['fab', 'sass']" />
             <fa :icon="['fab', 'figma']" />
             <fa :icon="['fab', 'react']" />
@@ -68,6 +69,17 @@
         <div class="lang-detail">
           <span class="icon-wrap">
             <fa :icon="['fab', 'css3-alt']" />
+          </span>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde in
+            consequatur vel ea nisi sunt sint. Amet blanditiis explicabo ducimus
+            iste deserunt, placeat expedita pariatur necessitatibus est vitae!
+            Neque, recusandae!
+          </p>
+        </div>
+        <div class="lang-detail">
+          <span class="icon-wrap">
+            <fa :icon="['fab', 'js']" />
           </span>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde in

@@ -6,16 +6,15 @@
       <router-link to="/about">About</router-link>
       <router-link to="/project">Project</router-link>
       <router-link to="/menulist">
-        <fa :icon="['fas', 'bars']"/>
-      </router-link>      
+        <fa :icon="['fas', 'bars']" />
+      </router-link>
     </nav>
   </header>
 </template>
 
 <script>
-
 export default {
-    name: "HeaderView",
+  name: "HeaderView",
 };
 </script>
 
@@ -25,7 +24,7 @@ header {
   left: 50%;
   transform: translate(-50%, 0);
   width: 70%;
-  padding: 30px;
+  padding: 30px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -40,13 +39,15 @@ header {
     justify-content: space-between;
     align-items: center;
     a {
-      padding: 0 30px ;
+      padding: 0 30px;
       font-weight: bold;
       color: red;
       text-decoration: none;
-
       &.router-link-exact-active {
         color: blue;
+      }
+      &:last-child {
+        padding-right: 0;
       }
     }
   }

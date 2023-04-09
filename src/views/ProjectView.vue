@@ -1,13 +1,34 @@
 <template>
   <div>
-    <h1>프로젝트 페이지입니다.</h1>
+    <div class="chair-section">
+      <Chair />
+    </div>
+    <div class="lelabo-section">
+      <Lelabo />
+    </div>
+    <div class="movie-section">
+      <Movie />
+    </div>
+    <div class="moitnyang-section">
+      <Moitnyang />
+    </div>
   </div>
 </template>
+
 <script>
+// @ is an alias to /src
+import Chair from "@/components/Chair.vue";
+import Lelabo from "@/components/Lelabo.vue";
+import Movie from "@/components/Movie.vue";
+import Moitnyang from "@/components/Moitnyang.vue";
+
 export default {
-  
-}
+  name: "ProjectView",
+  components: {
+    Chair,
+    Lelabo,
+    Movie,
+    Moitnyang,
+  },
+};
 </script>
-<style lang="scss">
-  
-</style>

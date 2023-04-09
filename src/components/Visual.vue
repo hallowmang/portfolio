@@ -22,21 +22,21 @@
     <section class="project-container">
       <h2>Project</h2>
       <div class="images">
-        <div class="image">
+        <router-link to="#" class="image">
           <img src="@/assets/img/chair.jpg" alt="" />
           <h3>Clone coding</h3>
           <p>체어마이스터</p>
-        </div>
-        <div class="image">
+        </router-link>
+        <router-link to="#" class="image">
           <img src="@/assets/img/lelabo.jpg" alt="" />
           <h3>Renewal design</h3>
           <p>LELABO</p>
-        </div>
-        <div class="image">
+        </router-link>
+        <router-link to="#" class="image">
           <img src="@/assets/img/poster2.jpg" alt="" />
           <h3>React API project</h3>
           <p>YFLIX</p>
-        </div>
+        </router-link>
       </div>
     </section>
 
@@ -59,7 +59,6 @@
 </template>
 
 <script>
-
 export default {
   name: "IntroductionView",
 };
@@ -105,6 +104,7 @@ export default {
     transform: translate(-50%, 0);
   }
   .Images {
+    width: 100%;
     position: absolute;
     text-align: center;
     bottom: 43%;
@@ -154,15 +154,16 @@ export default {
 
 .about-container {
   width: 100%;
-  height: 100vh;
+  height: 80vh;
   margin-top: 100px;
   background-color: #f4f0e8;
   .about-wrap {
     width: 70%;
+    height: 70%;
     margin: 0 auto;
+    padding: 150px 0;
     text-align: center;
     > h2 {
-      padding-top: 100px;
       margin-bottom: 50px;
       font-size: 3rem;
       text-align: center;
@@ -196,80 +197,81 @@ export default {
       font-size: inherit;
       font-family: inherit;
       margin-top: 30px;
-    }
 
-    button.learn-more {
-      width: 15%;
-      height: auto;
-    }
+      &.learn-more {
+        width: 200px;
+        height: auto;
+      }
+      .circle {
+        transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+        position: relative;
+        display: block;
+        margin: 0;
+        width: 3rem;
+        height: 3rem;
+        background: #2c3e50;
+        border-radius: 1.625rem;
 
-    button.learn-more .circle {
-      transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-      position: relative;
-      display: block;
-      margin: 0;
-      width: 3rem;
-      height: 3rem;
-      background: #2c3e50;
-      border-radius: 1.625rem;
-    }
+        .icon {
+          transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          margin: auto;
+          background: #fff;
 
-    button.learn-more .circle .icon {
-      transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      margin: auto;
-      background: #fff;
-    }
+          &.arrow {
+            transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+            left: 0.625rem;
+            width: 1.125rem;
+            height: 0.125rem;
+            background: none;
 
-    button.learn-more .circle .icon.arrow {
-      transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-      left: 0.625rem;
-      width: 1.125rem;
-      height: 0.125rem;
-      background: none;
-    }
+            &::before {
+              position: absolute;
+              content: "";
+              top: -0.31rem;
+              right: 0.0625rem;
+              width: 0.625rem;
+              height: 0.625rem;
+              border-top: 0.125rem solid #fff;
+              border-right: 0.125rem solid #fff;
+              transform: rotate(45deg);
+            }
+          }
+        }
+      }
 
-    button.learn-more .circle .icon.arrow::before {
-      position: absolute;
-      content: "";
-      top: -0.31rem;
-      right: 0.0625rem;
-      width: 0.625rem;
-      height: 0.625rem;
-      border-top: 0.125rem solid #fff;
-      border-right: 0.125rem solid #fff;
-      transform: rotate(45deg);
-    }
+      .button-text {
+        transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 0.75rem 0;
+        margin: 0 0 0 1.85rem;
+        color: #282936;
+        font-weight: 700;
+        line-height: 1.6;
+        text-align: center;
+        text-transform: uppercase;
+      }
 
-    button.learn-more .button-text {
-      transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      padding: 0.75rem 0;
-      margin: 0 0 0 1.85rem;
-      color: #282936;
-      font-weight: 700;
-      line-height: 1.6;
-      text-align: center;
-      text-transform: uppercase;
-    }
+      &:hover {
+        .circle {
+          width: 100%;
 
-    button:hover .circle {
-      width: 100%;
-    }
+          .icon.arrow {
+            background: #fff;
+            transform: translate(1rem, 0);
+          }
+        }
 
-    button:hover .circle .icon.arrow {
-      background: #fff;
-      transform: translate(1rem, 0);
-    }
-
-    button:hover .button-text {
-      color: #fff;
+        .button-text {
+          color: #fff;
+        }
+      }
     }
   }
 }
