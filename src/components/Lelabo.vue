@@ -63,6 +63,11 @@
 <script>
 export default {
   name: "ProjectView",
+  data(){
+    return{
+      id:1
+    }
+  },
 };
 </script>
 

@@ -1,5 +1,5 @@
 <template>
-  <section class="movie-detail-visual">
+  <section class="movie-detail-visual ">
     <div class="detail-wrap">
       <div class="detail-wrap-top">
         <p>React API project</p>
@@ -66,10 +66,23 @@
 <script>
 export default {
   name: "ProjectView",
+  data(){
+    return{
+      id:2
+    }
+  },
 };
 </script>
 
 <style lang="scss">
+.bg-movie{
+  background: linear-gradient(#4b0000, #000000);
+  .detail-wrap{
+    color:#fff;
+  }
+}
+
+
 .movie-detail-visual {
   width: 100%;
   height: 100%;

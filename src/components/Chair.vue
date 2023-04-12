@@ -1,28 +1,24 @@
 <template>
-  <section class="detail-visual">
+  <div>
+  <section class="detail-visual">   
     <div class="detail-wrap">
       <div class="detail-wrap-top">
-        <p>Clone coding</p>
-        <h1>Chair maister website</h1>
+        <p>{{ data.website[id].subtitle }}</p>
+        <h1>{{ data.website[id].title }}</h1>
         <div class="detail-text">
           <p>
-            체어마이스터 홈페이지를 클론 코딩을 해봤습니다. 이 홈페이지를 고른
-            이유는 저의 성향과 맞아 떨어졌으며, 깔끔하고 모던한 느낌이
-            들었습니다. 또한, 제 능력으로 구현이 가능할 수 있을 것 같아,
-            선택하였습니다.
+            {{ data.website[id].text }}
           </p>
           <div class="tools">
             <p>Tools</p>
-            <fa :icon="['fab', 'html5']" />
-            <fa :icon="['fab', 'css3-alt']" />
-            <fa :icon="['fab', 'js']" />
+            <fa v-for="v in data.website[id].tools" :key="v.id" :icon="['fab', v]" />
           </div>
         </div>
         <router-link to="#">
-          VIEW PROJECT <fa :icon="['fa', 'arrow-right']" class="arrow" />
+          {{ data.website[id].url }} <fa :icon="['fa', 'arrow-right']" class="arrow" />
         </router-link>
       </div>
-      <img src="@/assets/img/chair.jpg" alt="" />
+      <img :src="data.website[id].img" alt="" />
       <!-- <img src="@/assets/img/Chair-Meister-main-page.png" alt="" /> -->
     </div>
   </section>
@@ -30,23 +26,72 @@
   <section class="clone">
     <div class="clone-wrap">
       <div class="clone-title">
-        <h2>Website design</h2>
-        <p>최대한 본래의 사이트를 비슷하게 하려고 노력했습니다.</p>
+        <h2>{{ data.website[id].webDesign }}</h2>
+        <p>{{ data.website[id].designText }}.</p>
       </div>
       <div class="clone-homepage">
-        <img src="@/assets/img/Chair-Meister-main-page.png" alt="" />
+        <img :src="data.website[id].designImg" alt="" />
+      </div>
+    </div>  
+  </section>
+
+  <section class="responsive-design">
+    <div class="responsive-wrap">
+      <div class="responsive-title">
+        <h2>{{ data.website[id].responsive }}</h2>
+        <p>
+          {{ data.website[id].responsiveText }}
+        </p>
+      </div>
+      <div class="responsive-homepage">
+        <img :src="data.website[id].responsiveImg" alt="" />
       </div>
     </div>
   </section>
+</div>
 </template>
 
 <script>
+import projData from "@/assets/data/projectData.json"
+
 export default {
   name: "ProjectView",
+  data(){
+    return{
+      data:projData,
+      id:0,
+    }
+  },
+  mounted(){
+    this.id = this.$route.query.id;
+    
+    const bgMovie = document.querySelector(".detail-visual")
+    
+    if(this.id == 2){
+      bgMovie.classList.add("bg-movie")
+    } else {
+      bgMovie.classList.remove("bg-movie")
+    }
+
+    
+    // if(this.id == 2){
+
+    // }
+
+    window.scrollTo(0,0); //페이지가 바뀌었을때 스크롤이 위에서 시작
+  }
 };
 </script>
 
 <style lang="scss">
+.bg-movie{
+  background: linear-gradient(#4b0000, #000000);
+  .detail-wrap{
+    color:whitesmoke;
+  }
+}
+
+
 .detail-visual {
   width: 100%;
   height: 100%;

@@ -16,10 +16,16 @@
           </p>
           <div class="tools">
             <p>Tools</p>
-            <fa :icon="['fab', 'react']" />
-            <img src="@/assets/img/logos/NEXT.JS-logo.png" alt="" />
-            <img src="@/assets/img/logos/Tailwind-CSS-logo2.png" alt="" />
-            <fa :icon="['fab', 'sass']" />
+            <div class="tools-icons">
+              <fa :icon="['fab', 'react']" />
+              <img src="@/assets/img/logos/NEXT.JS-logo.png" alt="" />
+              <img
+                src="@/assets/img/logos/Tailwind-CSS-logo2.png"
+                alt=""
+                class="tailwind"
+              />
+              <fa :icon="['fab', 'sass']" />
+            </div>
           </div>
         </div>
         <router-link to="#">
@@ -45,11 +51,18 @@
       </div>
     </div>
   </section>
+
 </template>
 
 <script>
 export default {
   name: "ProjectView",
+
+  data(){
+    return{
+      id:0
+    }
+  },
 };
 </script>
 
@@ -99,16 +112,23 @@ export default {
             font-size: 1.5rem;
             margin-bottom: 5px;
           }
-          > img {
-            width: 5rem;
-            margin-top: 0;
-            margin-right: 20px;
-          }
-          svg {
-            font-size: 2.5rem;
-            margin-right: 20px;
-            &:last-child {
-              margin-right: 0;
+          .tools-icons {
+            display: flex;
+            align-items: center;
+            > img {
+              width: 5rem;
+              margin-top: 0;
+              margin-right: 20px;
+            }
+            .tailwind {
+              width: 4rem;
+            }
+            svg {
+              font-size: 2.5rem;
+              margin-right: 20px;
+              &:last-child {
+                margin-right: 0;
+              }
             }
           }
         }

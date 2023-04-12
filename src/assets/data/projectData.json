@@ -1,0 +1,93 @@
+{
+  "website": [
+    {
+      "id": 0,
+      "subtitle": "Clone coding",
+      "title": "Chair maister website",
+      "text": "체어마이스터 홈페이지를 클론 코딩을 해봤습니다. 이 홈페이지를 고른이유는 저의 성향과 맞아 떨어졌으며, 깔끔하고 모던한 느낌이 들었습니다. 또한, 제 능력으로 구현이 가능할 수 있을 것 같아 선택하였습니다.",
+      "url": "VIEW PROJECT",
+      "tools": ["html5","css3-alt","js"],
+      "img": "./img/chair.jpg",
+      "webDesign": "Website design",
+      "designText": "최대한 본래의 사이트를 비슷하게 하려고 노력했습니다.",
+      "designImg": "./img/Chair-Meister-main-page.png",
+      "responsive":"",
+      "responsiveText":"",
+      "responsiveImg":""
+      
+    },
+    {
+      "id": 1,
+      "subtitle": "Renewal",
+      "title": "LE LABO Renewal disign",
+      "text": "르라보의 공식 홈페이지의 트렌드가 지난 느낌이었습니다. 연구실 컨셉의 향수 브랜드이기 때문에 모던하면서, 깔끔하고, 정제된 느낌을 주고 싶었습니다. 컬러를 흰색계열과, 검정색계열을 사용하여, 연구실 느낌을 주고 싶었습니다.",
+      "url": "VIEW PROJECT",
+      "tools": ["html5","css3-alt","sass","js"],
+      "img": "./img/Lelabo-visual.jpg",
+      "webDesign": "Website design",
+      "designText": "본래 페이지 같은 경우, 너무 단조롭고 옛날같은 디자인 이었습니다. 그래서 사용자 인터페이스 디자인의 사용자 경험을 개선하기로 결정했습니다.",
+      "designImg": "./img/Le-labo.png",
+      "responsive":"Responsive design",
+      "responsiveText":"많은 사용자가 스마트폰을 통한 브라우징을 선호한다는 점을 고려하여 모바일 버전도 설계했습니다.",
+      "responsiveImg":"./img/LElabo-reponsive.png"
+    },{
+      "id": 2,
+      "subtitle": "React API project",
+      "title": "YFLIX,Used API Movie Site",
+      "text": "현재 많은 OTT서비스 중, 넷플릭스 디자인을 따와 프로젝트에 적용을 해봤습니다. 메인화면은 최근 나온 영화로 나오게 하였으며, watch now를 누르면 해당 작품의 디테일 내용이 나옵니다. 또한, 비슷한 장르의 영화도 나오도록 하였습니다.",
+      "url": "VIEW PROJECT",
+      "tools": ["html5","css3-alt","sass","react"],
+      "img": "./img/React-APIproject-visual.png",
+      "webDesign": "Website design",
+      "designText": "디자인 같은 경우는 검정색 바탕으로 포인트 색상으로 빨간색을 사용하였습니다. 컨텐츠는 영화와 TV드라마를 선택하였으며, 컨텐츠들이 한눈에 보일 수 있도록 작은사이즈로 나열하였습니다.",
+      "designImg": "./img/React-APIproject-mainpage.png",
+      "responsive":"Responsive design",
+      "responsiveText":"많은 사용자가 스마트폰을 통한 브라우징을 선호한다는 점을 고려하여 모바일 버전도 설계했습니다.",
+      "responsiveImg":"./img/React-reponsive-design-group.png",
+      "textColor":"bg-movie"
+    },{
+      "id": 3,
+      "subtitle": "",
+      "title": "",
+      "text": "",
+      "url": "",
+      "tools": "",
+      "img": "",
+      "webDesign": "",
+      "designText": "",
+      "designImg": "",
+      "responsive":"",
+      "responsiveText":"",
+      "responsiveImg":""
+    },{
+      "id": 4,      
+      "subtitle": "",
+      "title": "",
+      "text": "",
+      "url": "",
+      "tools": "",
+      "img": "",
+      "webDesign": "",
+      "designText": "",
+      "designImg": "",
+      "responsive":"",
+      "responsiveText":"",
+      "responsiveImg":""
+    }
+  ],
+
+  "app": [
+    {
+      "id": 0,
+      "subtitle": "NEXT.js project",
+      "title": "Moitnyang",
+      "text": "CRUD를 활용한 프로젝트를 만들고 싶어, 팀원들과 상의한 결과, 중고거래 어플리케이션을 만들자는 의견이 나왔습니다. 까칠한 고양이를 컨셉으로 디자인 하였습니다. 중고거래이기 때문에 화려한 디자인 보다는 사용자 편의를 위해 명확하며, 한 화면에 기능을 넣으려 노력했습니다.",
+      "url": "VIEW PROJECT",
+      "tools": "Tools",
+      "img": "./img/Moitnyang-main-visual.png",
+      "design": "design",
+      "designText": "많은 사용자가 스마트폰을 통한 브라우징을 선호한다는 점을 고려하여 모바일 버전도 설계했습니다.",
+      "designImg": "./img/Moitnyang-design.png"
+    }
+  ]
+}

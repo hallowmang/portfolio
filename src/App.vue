@@ -1,9 +1,11 @@
 // HTML
 <template>
   <div class="container">
-    <Header/>
+    <Header />
     <router-view />
-    <footer>Copyrights @ 2023 siyoung CHOI. All rights reserved.</footer>
+    <footer class="footer">
+      Copyrights @ 2023 siyoung CHOI. All rights reserved.
+    </footer>
   </div>
 </template>
 
@@ -16,13 +18,35 @@ export default {
   components: {
     Header,
   },
+  mounted() {
+    window.addEventListener("scroll", this.handleScroll);
+
+  },
+  methods: {
+    handleScroll() {
+
+      
+      //footer 최하단시 풋터 보이기
+      // console.log(document.documentElement.scrollHeight - window.innerHeight - 100);
+      const footer = document.querySelector(".footer");
+      const scrollBottom = document.documentElement.scrollHeight - window.innerHeight - 100
+      if (window.pageYOffset > scrollBottom ) {
+        footer.classList.add("show");
+      } else {
+        footer.classList.remove("show");
+      }
+    },
+  },
+  beforeUnmount() {
+    window.removeEventListener("scroll", this.handleScroll);
+  },
 };
 </script>
 
 //SCSS
 <style lang="scss">
 @import url("@/assets/scss/reset.scss");
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500&display=swap");
 
 #app {
   font-family: "Montserrat", sans-serif;
@@ -34,11 +58,18 @@ export default {
   width: 100%;
   background-color: #fcfbf9;
   height: 100%;
-  footer{
+  footer {
+    display: none;
     position: fixed;
     bottom: 15px;
     left: 50%;
-    translate: -50% 0;
+    transform: translate(-50%, 0);
+    transition: opacity 2s ease-in-out;
+    opacity: 0;
+    &.show {
+      display: block;
+      opacity: 1;
+    }
   }
 }
 </style>

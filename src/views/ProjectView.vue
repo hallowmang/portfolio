@@ -22,6 +22,7 @@ import Lelabo from "@/components/Lelabo.vue";
 import Movie from "@/components/Movie.vue";
 import Moitnyang from "@/components/Moitnyang.vue";
 
+
 export default {
   name: "ProjectView",
   components: {
@@ -31,4 +32,7 @@ export default {
     Moitnyang,
   },
 };
+
+
+
 </script>

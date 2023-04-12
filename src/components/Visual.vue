@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section class="visual-container">
+    <section class="visual-container main-con">
       <div class="visual">
         <h1>
           <span>HELLO, I'M </span>
@@ -19,20 +19,20 @@
       </div>
     </section>
 
-    <section class="project-container">
+    <section class="project-container main-con">
       <h2>Project</h2>
       <div class="images">
-        <router-link to="#" class="image">
+        <router-link to="./Chair?id=0" class="image">
           <img src="@/assets/img/chair.jpg" alt="" />
           <h3>Clone coding</h3>
           <p>체어마이스터</p>
         </router-link>
-        <router-link to="#" class="image">
+        <router-link to="./Chair?id=1" class="image">
           <img src="@/assets/img/lelabo.jpg" alt="" />
           <h3>Renewal design</h3>
           <p>LELABO</p>
         </router-link>
-        <router-link to="#" class="image">
+        <router-link to="./Chair?id=2" class="image">
           <img src="@/assets/img/poster2.jpg" alt="" />
           <h3>React API project</h3>
           <p>YFLIX</p>
@@ -40,14 +40,14 @@
       </div>
     </section>
 
-    <section class="about-container">
+    <section class="about-container main-con">
       <div class="about-wrap">
         <h2>About me</h2>
         <img src="@/assets/img/about-me.jpg" alt="" />
         <h3>최시영</h3>
         <p>안녕하세요. 프론트엔드 개발자를 목표로 하고 있는 최시영입니다.</p>
 
-        <button class="learn-more">
+        <button class="learn-more" @click="aboutMe">
           <span class="circle" aria-hidden="true">
             <span class="icon arrow"></span>
           </span>
@@ -59,14 +59,28 @@
 </template>
 
 <script>
+
 export default {
   name: "IntroductionView",
+
+
+  methods: {
+    
+    //about페이지로 이동
+    aboutMe() {
+      this.$router.push({path:"about"})
+    }
+  }
+
 };
+
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
 .visual {
+  width: 100%;
   background-color: black;
   h1 {
     position: relative;
@@ -154,12 +168,11 @@ export default {
 
 .about-container {
   width: 100%;
-  height: 80vh;
+  height: 100%;
   margin-top: 100px;
   background-color: #f4f0e8;
   .about-wrap {
-    width: 70%;
-    height: 70%;
+    width: 100%;
     margin: 0 auto;
     padding: 150px 0;
     text-align: center;
