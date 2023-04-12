@@ -21,82 +21,79 @@
 export default {
   name: "HeaderView",
 
-  mounted(){
-    window.addEventListener("scroll",this.colorChangehandle);
-
-    
+  mounted() {
+    window.addEventListener("scroll", this.colorChangehandle);
   },
   methods: {
     scrollToIntro() {
-      this.$router.push('/');
-      setTimeout(()=>{
+      this.$router.push("/");
+      setTimeout(() => {
         const visualContainer = document.querySelector(".visual-container");
         visualContainer.scrollIntoView({ behavior: "smooth" });
-      },200)
+      }, 200);
     },
     scrollToAbout() {
-      this.$router.push('/');
-      setTimeout(()=>{
+      this.$router.push("/");
+      setTimeout(() => {
         const aboutContainer = document.querySelector(".about-container");
         aboutContainer.scrollIntoView({ behavior: "smooth" });
-      },200)
+      }, 200);
     },
 
     scrollToProject() {
-      this.$router.push('/');
-      setTimeout(()=>{
+      this.$router.push("/");
+      setTimeout(() => {
         const projectContainer = document.querySelector(".project-container");
         projectContainer.scrollIntoView({ behavior: "smooth" });
-      },200)
+      }, 200);
     },
 
     colorChangehandle() {
-      let name = this.$route.name
-      const header = document.querySelector("header")
+      let name = this.$route.name;
+      const header = document.querySelector("header");
       const navAll = document.querySelectorAll("header nav div");
-      
+
       const mainCon = document.querySelectorAll(".main-con");
       let pos = [];
-      mainCon.forEach(v=>{
-        pos.push({t:v.offsetTop, b:v.offsetTop + v.offsetHeight})
-      })
-     
-      const navRemove = ()=>{
-        navAll.forEach((menu)=>{
-          menu.classList.remove('aaa');
-        })
-      }
+      mainCon.forEach((v) => {
+        pos.push({ t: v.offsetTop, b: v.offsetTop + v.offsetHeight });
+      });
 
-      if(name != 'home'){
-        header.classList.add("bg")
+      const navRemove = () => {
+        navAll.forEach((menu) => {
+          menu.classList.remove("aaa");
+        });
+      };
+
+      if (name != "home") {
+        header.classList.add("bg");
         navRemove();
         return;
-      } 
-      
+      }
+
       // const projectTop = document.querySelector(".project-container").offsetTop;
       // const projectHeigh = document.querySelector(".project-container").offsetHeigh;
       // console.log(projectTop,"aaa")
       // console.log(projectHeigh,"ddd")
-      
+
       // const scrollBottom = document.documentElement.scrollHeight - window.innerHeight - 100
-      if(window.pageYOffset > pos[0].b){
-        header.classList.add("bg")
-      }else{
-        header.classList.remove("bg")
+      if (window.pageYOffset > pos[0].b) {
+        header.classList.add("bg");
+      } else {
+        header.classList.remove("bg");
       }
 
-      
       if (window.pageYOffset < pos[0].b) {
         navRemove();
         navAll[0].classList.add("aaa");
       }
 
-      if (window.pageYOffset > pos[1].t  && window.pageYOffset < pos[1].b ) {
+      if (window.pageYOffset > pos[1].t && window.pageYOffset < pos[1].b) {
         navRemove();
         navAll[1].classList.add("aaa");
       }
 
-      if (window.pageYOffset > pos[2].t  && window.pageYOffset < pos[2].b ) {
+      if (window.pageYOffset > pos[2].t && window.pageYOffset < pos[2].b) {
         navRemove();
         navAll[2].classList.add("aaa");
       }
@@ -115,8 +112,6 @@ header {
   }
   .header-wrap {
     width: 70%;
-    // left: 50%;
-    // transform: translate(-50%, 0);
     margin: 0 auto;
     padding: 20px 0;
     display: flex;
@@ -147,6 +142,31 @@ header {
         color: whitesmoke;
         &.aaa {
           color: red;
+        }
+      }
+    }
+  }
+}
+
+/* -------------------------------------  반응형  ------------------------------------- */
+/* 테블릿 CSS */
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  html {
+    font-size: 16px;
+  }
+
+  header {
+    .header-wrap {
+      h1 {
+        font-size: 1.5rem;
+      }
+      nav {
+        width: 40%;
+        font-size: 1.5rem;
+        a {
+        }
+        > div {
         }
       }
     }

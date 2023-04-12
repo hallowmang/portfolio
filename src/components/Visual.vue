@@ -59,22 +59,16 @@
 </template>
 
 <script>
-
 export default {
   name: "IntroductionView",
 
-
   methods: {
-    
     //about페이지로 이동
     aboutMe() {
-      this.$router.push({path:"about"})
-    }
-  }
-
+      this.$router.push({ path: "about" });
+    },
+  },
 };
-
-
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -84,26 +78,23 @@ export default {
   background-color: black;
   h1 {
     position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     padding: 100px 0;
-    font-size: 12.5rem;
+    font-size: 10rem;
     font-weight: 500;
     color: whitesmoke;
     width: 100%;
     height: 100vh;
-    top: 20px;
+    top: 110px;
     line-height: 0.9;
     z-index: 9998;
     :nth-child(1) {
-      margin-left: 20%;
+      padding-left: 15%;
     }
     :nth-child(2) {
-      margin-left: 40%;
+      padding-left: 30%;
     }
     :nth-child(3) {
-      margin-left: 60%;
+      padding-left: 50%;
     }
   }
 
@@ -118,12 +109,13 @@ export default {
     transform: translate(-50%, 0);
   }
   .Images {
-    width: 100%;
+    width: 18%;
     position: absolute;
-    text-align: center;
-    bottom: 43%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     img {
-      width: 14%;
+      width: 100%;
     }
   }
 }
@@ -155,11 +147,11 @@ export default {
       }
       h3 {
         margin-top: 10px;
-        font-size: 20px;
+        font-size: 1.25rem;
       }
       p {
         font-family: "Noto Sans KR", sans-serif;
-        font-size: 18px;
+        font-size: 1.125rem;
         font-weight: 300;
       }
     }
@@ -287,5 +279,78 @@ export default {
       }
     }
   }
+}
+
+/* -------------------------------------  반응형  ------------------------------------- */
+/* 테블릿 CSS */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  html {
+    font-size: 8px;
+  }
+
+  .visual {
+    h1 {
+      font-size: 11rem;
+      height: 50vh;
+      top: 90px;
+      :nth-child(1) {
+        padding-left: 15%;
+      }
+      :nth-child(2) {
+        padding-left: 30%;
+      }
+      :nth-child(3) {
+        padding-left: 50%;
+      }
+    }
+
+    .text {
+      top: 480px;
+      font-size: 1.5rem;
+    }
+    .Images {
+      width: 21%;
+      top: 25%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .project-container {
+    height: 60vh;
+
+    h2 {
+      padding-top: 60px;
+      margin-bottom: 50px;
+      font-size: 3rem;
+      text-align: center;
+    }
+    .images {
+      width: 90%;
+      height: 50%;
+      margin: 0 auto;
+      .image {
+        width: 32%;
+        height: 100%;
+        img {
+          width: 100%;
+          height: 100%;
+          border-radius: 5px;
+          object-fit: cover;
+        }
+        h3 {
+        }
+        p {
+        }
+      }
+    }
+  }
+}
+
+/* 모바일 CSS */
+@media screen and (max-width: 767px) {
 }
 </style>
