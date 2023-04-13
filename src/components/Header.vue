@@ -152,18 +152,16 @@ header {
 /* 테블릿 CSS */
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
-  html {
-    font-size: 16px;
-  }
 
   header {
     .header-wrap {
+      padding: 15px 0;
       h1 {
         font-size: 1.5rem;
       }
       nav {
         width: 40%;
-        font-size: 1.5rem;
+        font-size: 1.2rem;
         a {
         }
         > div {
@@ -171,5 +169,44 @@ header {
       }
     }
   }
+}
+
+/* 모바일 CSS */
+@media screen and (max-width: 767px) {
+  html{
+    font-size: 10px;
+  }
+
+  header {
+  
+  &.bg {
+    
+  }
+  .header-wrap {
+    width: 80%;
+
+    h1 {
+      
+      font-size: 2rem;
+      
+    }
+    nav {
+      font-size: 2rem;
+      justify-content: flex-end;
+      a {
+        font-weight: bold;
+        color: whitesmoke;
+        text-decoration: none;
+        &.router-link-exact-active {
+          background-color: antiquewhite;
+        }
+      }
+      > div {
+        display: none;
+      }
+    }
+  }
+}
+
 }
 </style>

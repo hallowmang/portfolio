@@ -75,20 +75,20 @@ export default {
 <style lang="scss">
 .visual {
   width: 100%;
+  height: 100vh;
   background-color: black;
   h1 {
     position: relative;
     padding: 100px 0;
-    font-size: 10rem;
+    font-size: 12rem;
     font-weight: 500;
     color: whitesmoke;
     width: 100%;
-    height: 100vh;
-    top: 110px;
+    top: 150px;
     line-height: 0.9;
     z-index: 9998;
     :nth-child(1) {
-      padding-left: 15%;
+      padding-left: 18%;
     }
     :nth-child(2) {
       padding-left: 30%;
@@ -109,9 +109,9 @@ export default {
     transform: translate(-50%, 0);
   }
   .Images {
-    width: 18%;
+    width: 15%;
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     img {
@@ -132,7 +132,7 @@ export default {
   }
   .images {
     width: 100%;
-    height: 70%;
+    height: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -141,7 +141,7 @@ export default {
       height: 100%;
       img {
         width: 100%;
-        height: 100%;
+        height: 70vh;
         border-radius: 5px;
         object-fit: cover;
       }
@@ -204,8 +204,353 @@ export default {
       margin-top: 30px;
 
       &.learn-more {
-        width: 200px;
+        width: 12%;
         height: auto;
+        font-size: 1.1rem;
+      }
+      .circle {
+        transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+        position: relative;
+        display: block;
+        margin: 0;
+        width: 3rem;
+        height: 3rem;
+        background: #2c3e50;
+        border-radius: 1.625rem;
+
+        .icon {
+          transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          margin: auto;
+          background: #fff;
+
+          &.arrow {
+            transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+            top: 0.2rem;
+            left: 0.625rem;
+            width: 1.125rem;
+            height: 0.125rem;
+            background: none;
+
+            &::before {
+              position: absolute;
+              content: "";
+              top: -0.31rem;
+              right: 0.0625rem;
+              width: 0.625rem;
+              height: 0.625rem;
+              border-top: 0.125rem solid #fff;
+              border-right: 0.125rem solid #fff;
+              transform: rotate(45deg);
+            }
+          }
+        }
+      }
+
+      .button-text {
+        transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 0.75rem 0;
+        margin: 0 0 0 1.85rem;
+        color: #282936;
+        font-weight: 700;
+        line-height: 1.6;
+        text-align: center;
+        text-transform: uppercase;
+      }
+
+      &:hover {
+        .circle {
+          width: 100%;
+
+          .icon.arrow {
+            background: #fff;
+            transform: translate(1rem, 0);
+          }
+        }
+
+        .button-text {
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
+/* -------------------------------------  반응형  ------------------------------------- */
+/* 테블릿 CSS */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  html {
+    font-size: 10px;
+  }
+
+  .visual {
+    height: 50vh;
+    h1 {
+      font-size: 11rem;
+      top: 90px;
+      :nth-child(1) {
+        padding-left: 15%;
+      }
+      :nth-child(2) {
+        padding-left: 30%;
+      }
+      :nth-child(3) {
+        padding-left: 50%;
+      }
+    }
+
+    .text {
+      top: 48%;
+      font-size: 1.5rem;
+    }
+    .Images {
+      width: 21%;
+      top: 25%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .project-container {
+  width: 90%;
+  height: 85vh;
+  margin: 0 auto;
+  h2 {
+    padding-top: 100px;
+    margin-bottom: 50px;
+    font-size: 4rem;
+    text-align: center;
+  }
+  .images {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .image {
+      width: 32%;
+      height: 100%;
+      img {
+        width: 100%;
+        height: 50vh;
+        border-radius: 5px;
+        object-fit: cover;
+      }
+      h3 {
+        margin-top: 10px;
+        font-size: 2rem;
+      }
+      p {
+        
+        font-size: 1.8rem;
+        
+      }
+    }
+  }
+}
+
+  .about-container {
+    margin-top: 0;
+    .about-wrap {
+      width: 100%;
+      margin: 0 auto;
+      padding: 10% 0;
+      text-align: center;
+      > h2 {
+        font-size: 4rem;
+      }
+      img {
+        width: 28%;
+      }
+      h3 {
+        font-size: 3rem;
+      }
+      p {
+        width: 30%;
+        font-size: 2rem;
+      }
+      button {
+        &.learn-more {
+          width: 15%;
+        }
+        .circle {
+          transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+          position: relative;
+          display: block;
+          margin: 0;
+          width: 3rem;
+          height: 3rem;
+          background: #2c3e50;
+          border-radius: 1.625rem;
+
+          .icon {
+            transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            background: #fff;
+
+            &.arrow {
+              transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+              left: 0.625rem;
+              width: 1.125rem;
+              height: 0.125rem;
+              background: none;
+
+              &::before {
+                position: absolute;
+                content: "";
+                top: -0.31rem;
+                right: 0.0625rem;
+                width: 0.625rem;
+                height: 0.625rem;
+                border-top: 0.125rem solid #fff;
+                border-right: 0.125rem solid #fff;
+                transform: rotate(45deg);
+              }
+            }
+          }
+        }
+
+        .button-text {
+          transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          padding: 0.75rem 0;
+          margin: 0 0 0 1.85rem;
+          color: #282936;
+          font-weight: 700;
+          line-height: 1.6;
+          text-align: center;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+}
+
+/* 모바일 CSS */
+@media screen and (max-width: 767px) {
+
+  .visual {
+    height: 100vh;
+    h1 {
+      font-size: 5.5rem;
+      top: 40%;
+      :nth-child(1) {
+        padding-left: 7%;
+      }
+      :nth-child(2) {
+        padding-left: 23%;
+      }
+      :nth-child(3) {
+        padding-left: 50%;
+      }
+    }
+
+    .text {
+      bottom: 2%;
+      font-size: 1.2rem;
+      :first-child{
+        display: none;
+      }
+    }
+    .Images {
+      width: 60%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .project-container {
+  width: 80%;
+  height: 100vh;
+  margin: 0 auto;
+  h2 {
+    padding-top: 25%;
+    margin-bottom: 50px;
+    font-size: 4rem;
+    text-align: center;
+  }
+  .images {
+    overflow: hidden;
+    .image {
+      width: 100%;
+      flex-shrink: 0;
+      img {
+        width: 100%;
+        height: 70vh;
+      }
+      h3 {
+        margin-top: 10px;
+        font-size: 2rem;
+      }
+      p {
+        font-size: 1.8rem;
+      }
+    }
+  }
+}
+
+.about-container {
+  width: 100%;
+  height: 80vh;
+  margin-top: 20%;
+  .about-wrap {
+    width: 100%;
+    margin: 0 auto;
+    padding: 35% 0;
+    > h2 {
+      margin-bottom: 50px;
+      font-size: 4rem;
+      text-align: center;
+    }
+    img {
+      width: 40%;
+    }
+    h3 {
+      margin: 20px 0 10px 0;
+    }
+    p {
+      width: 54%;
+      font-size: 1.6rem;      
+    }
+    button {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+      outline: none;
+      border: 0;
+      vertical-align: middle;
+      text-decoration: none;
+      background: transparent;
+      padding: 0;
+      font-size: inherit;
+      font-family: inherit;
+      margin-top: 30px;
+
+      &.learn-more {
+        width: 40%;
+        height: auto;
+        font-size: 1.2rem;
       }
       .circle {
         transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
@@ -281,76 +626,6 @@ export default {
   }
 }
 
-/* -------------------------------------  반응형  ------------------------------------- */
-/* 테블릿 CSS */
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-  html {
-    font-size: 8px;
-  }
 
-  .visual {
-    h1 {
-      font-size: 11rem;
-      height: 50vh;
-      top: 90px;
-      :nth-child(1) {
-        padding-left: 15%;
-      }
-      :nth-child(2) {
-        padding-left: 30%;
-      }
-      :nth-child(3) {
-        padding-left: 50%;
-      }
-    }
-
-    .text {
-      top: 480px;
-      font-size: 1.5rem;
-    }
-    .Images {
-      width: 21%;
-      top: 25%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      img {
-        width: 100%;
-      }
-    }
-  }
-
-  .project-container {
-    height: 60vh;
-
-    h2 {
-      padding-top: 60px;
-      margin-bottom: 50px;
-      font-size: 3rem;
-      text-align: center;
-    }
-    .images {
-      width: 90%;
-      height: 50%;
-      margin: 0 auto;
-      .image {
-        width: 32%;
-        height: 100%;
-        img {
-          width: 100%;
-          height: 100%;
-          border-radius: 5px;
-          object-fit: cover;
-        }
-        h3 {
-        }
-        p {
-        }
-      }
-    }
-  }
-}
-
-/* 모바일 CSS */
-@media screen and (max-width: 767px) {
 }
 </style>

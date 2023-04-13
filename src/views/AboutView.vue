@@ -244,4 +244,175 @@ export default {};
     }
   }
 }
+
+
+/* 테블릿 CSS */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .about {
+    width: 100%;
+  .profile {
+    width: 80%;
+    .info {
+      width: 100%;
+      margin-right: 20%;
+      h1 {
+        font-size: 3.5rem;
+        span {
+          color: #fd5454;
+        }
+      }
+      > p {
+        font-size: 1.3rem;
+        margin: 20px 0;
+      }
+      .wrap {
+        p{
+          font-size: 1.3rem;
+          margin-bottom: 5px;
+        }
+
+        .icons {
+          svg {
+            margin-right: 5%;
+            font-size: 2.5rem;
+          }
+        }
+      }
+    }
+    img {
+      width: 40%;
+    }
+  }
+
+  .who {
+    width: 100%;
+    .who-text {
+      width: 68%;
+      padding: 15% 0;
+      h2 {
+        font-size: 4rem;        
+      }
+      p {
+        font-size: 1.5rem;        
+      }
+    }
+  }
+
+  .lang {
+    width: 100%;
+    padding: 15% 0;
+    h2 {      
+      font-size: 4rem;      
+    }
+    .lang-wrap {
+      width: 67%;     
+      .lang-detail {
+        &:last-child {
+          margin-bottom: 0;
+        }
+        .icon-wrap {
+          width: 50px;
+          height: auto;
+          margin-right: 70px;
+          svg {
+            font-size: 6rem;
+          }
+        }
+        p {
+          font-size: 1.3rem;
+        }
+      }
+    }
+  }
+}
+}
+
+/* 모바일 CSS */
+@media screen and (max-width: 767px){
+  html{
+    font-size: 9px;
+  }
+  .about {
+    width: 100%;
+  .profile {
+    width: 80%;
+    flex-direction: column;
+    padding: 20% 0;
+    .info {
+      width: 100%;
+      margin: 0 auto;
+      order: 2;
+      h1 {
+        font-size: 3.5rem;
+        span {
+          color: #fd5454;
+        }
+      }
+      > p {
+        font-size: 1.3rem;
+        margin: 20px 0;
+      }
+      .wrap {
+        p{
+          font-size: 1.3rem;
+          margin-bottom: 5px;
+        }
+
+        .icons {
+          svg {
+            margin-right: 5%;
+            font-size: 2.5rem;
+          }
+        }
+      }
+    }
+    img {
+      width: 100%;
+      order: 1;
+      margin-bottom: 20px;
+    }
+  }
+
+  .who {
+    width: 100%;
+    .who-text {
+      width: 68%;
+      padding: 15% 0;
+      h2 {
+        font-size: 4rem;        
+      }
+      p {
+        font-size: 1.5rem;        
+      }
+    }
+  }
+
+  .lang {
+    width: 100%;
+    padding: 15% 0;
+    h2 {      
+      font-size: 4rem;      
+    }
+    .lang-wrap {
+      width: 80%;     
+      .lang-detail {
+        &:last-child {
+          margin-bottom: 0;
+        }
+        .icon-wrap {
+          width: 12%;
+          height: auto;
+          margin-right: 10%;
+          svg {
+            font-size: 5.5rem;
+          }
+        }
+        p {
+          font-size: 1.3rem;
+        }
+      }
+    }
+  }
+}
+}
 </style>
