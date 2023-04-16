@@ -51,17 +51,16 @@
       </div>
     </div>
   </section>
-
 </template>
 
 <script>
 export default {
   name: "ProjectView",
 
-  data(){
-    return{
-      id:0
-    }
+  data() {
+    return {
+      id: 0,
+    };
   },
 };
 </script>
@@ -141,37 +140,37 @@ export default {
   }
 }
 
-.responsive-design {
-  width: 100%;
-  height: 100%;
-  background-color: #eaf0f4;
-  .responsive-wrap {
-    width: 70%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0 auto;
-    padding: 150px 0;
-    .responsive-title {
-      width: 45%;
-      margin: 0 auto;
-      h2 {
-        font-size: 2.5rem;
-        text-align: center;
-      }
-      p {
-        font-family: "Noto Sans KR", sans-serif;
-        width: 70%;
-        margin: 0 auto;
-      }
-    }
-    .responsive-homepage {
-      width: 90%;
-      margin-top: 100px;
-      img {
-        width: 100%;
-      }
-    }
-  }
-}
+// .responsive-design {
+//   width: 100%;
+//   height: 100%;
+//   background-color: #eaf0f4;
+//   .responsive-wrap {
+//     width: 70%;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     margin: 0 auto;
+//     padding: 150px 0;
+//     .responsive-title {
+//       width: 45%;
+//       margin: 0 auto;
+//       h2 {
+//         font-size: 2.5rem;
+//         text-align: center;
+//       }
+//       p {
+//         font-family: "Noto Sans KR", sans-serif;
+//         width: 70%;
+//         margin: 0 auto;
+//       }
+//     }
+//     .responsive-homepage {
+//       width: 90%;
+//       margin-top: 100px;
+//       img {
+//         width: 100%;
+//       }
+//     }
+//   }
+// }
 </style>

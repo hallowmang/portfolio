@@ -1,5 +1,5 @@
 <template>
-  <section class="movie-detail-visual ">
+  <section class="movie-detail-visual">
     <div class="detail-wrap">
       <div class="detail-wrap-top">
         <p>React API project</p>
@@ -66,151 +66,150 @@
 <script>
 export default {
   name: "ProjectView",
-  data(){
-    return{
-      id:2
-    }
+  data() {
+    return {
+      id: 2,
+    };
   },
 };
 </script>
 
 <style lang="scss">
-.bg-movie{
-  background: linear-gradient(#4b0000, #000000);
-  .detail-wrap{
-    color:#fff;
-  }
-}
+// .bg-movie{
+//   background: linear-gradient(#4b0000, #000000);
+//   .detail-wrap{
+//     color:#fff;
+//   }
+// }
 
+// .movie-detail-visual {
+//   width: 100%;
+//   height: 100%;
+//   background: linear-gradient(#4b0000, #000000);
+//   h1 {
+//     width: 60%;
+//     font-size: 3rem;
+//     margin-top: 50px;
+//     color: whitesmoke;
+//     span {
+//       color: #d10000;
+//     }
+//   }
+//   .detail-wrap {
+//     width: 70%;
+//     height: 100%;
+//     margin: 0 auto;
+//     padding: 150px 0;
+//     .detail-wrap-top {
+//       padding: 0 100px;
+//       p {
+//         color: whitesmoke;
+//       }
+//       a {
+//         color: whitesmoke;
+//         &:hover .arrow {
+//           transform: translateX(5px);
+//         }
+//         .arrow {
+//           transition: transform 0.5s ease;
+//         }
+//       }
+//       .detail-text {
+//         display: flex;
+//         justify-content: space-between;
+//         align-items: center;
+//         color: whitesmoke;
+//         p {
+//           width: 50%;
+//           font-family: "Noto Sans KR", sans-serif;
+//         }
+//         .tools {
+//           margin: 30px 0;
+//           > p {
+//             font-size: 1.5rem;
+//             margin-bottom: 5px;
+//           }
+//           svg {
+//             font-size: 2.5rem;
+//             margin-right: 20px;
+//             &:last-child {
+//               margin-right: 0;
+//             }
+//           }
+//         }
+//       }
+//     }
+//     img {
+//       width: 100%;
+//       margin-top: 90px;
+//     }
+//   }
+// }
 
-.movie-detail-visual {
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(#4b0000, #000000);
-  h1 {
-    width: 60%;
-    font-size: 3rem;
-    margin-top: 50px;
-    color: whitesmoke;
-    span {
-      color: #d10000;
-    }
-  }
-  .detail-wrap {
-    width: 70%;
-    height: 100%;
-    margin: 0 auto;
-    padding: 150px 0;
-    .detail-wrap-top {
-      padding: 0 100px;
-      p {
-        color: whitesmoke;
-      }
-      a {
-        color: whitesmoke;
-        &:hover .arrow {
-          transform: translateX(5px);
-        }
-        .arrow {
-          transition: transform 0.5s ease;
-        }
-      }
-      .detail-text {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        color: whitesmoke;
-        p {
-          width: 50%;
-          font-family: "Noto Sans KR", sans-serif;
-        }
-        .tools {
-          margin: 30px 0;
-          > p {
-            font-size: 1.5rem;
-            margin-bottom: 5px;
-          }
-          svg {
-            font-size: 2.5rem;
-            margin-right: 20px;
-            &:last-child {
-              margin-right: 0;
-            }
-          }
-        }
-      }
-    }
-    img {
-      width: 100%;
-      margin-top: 90px;
-    }
-  }
-}
+// .clone {
+//   width: 100%;
+//   height: 100%;
+//   background-color: whitesmoke;
+//   .clone-wrap {
+//     width: 70%;
+//     display: flex;
+//     justify-content: space-between;
+//     margin: 0 auto;
+//     padding: 150px 0;
+//     .clone-title {
+//       width: 45%;
+//       margin: 100px 0;
+//       h2 {
+//         font-size: 2.5rem;
+//         text-align: center;
+//       }
+//       p {
+//         font-family: "Noto Sans KR", sans-serif;
+//         font-size: 1.25rem;
+//         width: 70%;
+//         margin: 0 auto;
+//       }
+//     }
+//     .clone-homepage {
+//       width: 50%;
+//       img {
+//         width: 100%;
+//       }
+//     }
+//   }
+// }
 
-.clone {
-  width: 100%;
-  height: 100%;
-  background-color: whitesmoke;
-  .clone-wrap {
-    width: 70%;
-    display: flex;
-    justify-content: space-between;
-    margin: 0 auto;
-    padding: 150px 0;
-    .clone-title {
-      width: 45%;
-      margin: 100px 0;
-      h2 {
-        font-size: 2.5rem;
-        text-align: center;
-      }
-      p {
-        font-family: "Noto Sans KR", sans-serif;
-        font-size: 1.25rem;
-        width: 70%;
-        margin: 0 auto;
-      }
-    }
-    .clone-homepage {
-      width: 50%;
-      img {
-        width: 100%;
-      }
-    }
-  }
-}
-
-.responsive-design {
-  width: 100%;
-  height: 100%;
-  background-color: #f5eded;
-  .responsive-wrap {
-    width: 70%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0 auto;
-    padding: 150px 0;
-    .responsive-title {
-      width: 45%;
-      margin: 0 auto;
-      h2 {
-        font-size: 2.5rem;
-        text-align: center;
-      }
-      p {
-        font-family: "Noto Sans KR", sans-serif;
-        width: 70%;
-        margin: 0 auto;
-      }
-    }
-    .responsive-homepage {
-      width: 90%;
-      margin-top: 100px;
-      img {
-        width: 100%;
-      }
-    }
-  }
-}
+// .responsive-design {
+//   width: 100%;
+//   height: 100%;
+//   background-color: #f5eded;
+//   .responsive-wrap {
+//     width: 70%;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     margin: 0 auto;
+//     padding: 150px 0;
+//     .responsive-title {
+//       width: 45%;
+//       margin: 0 auto;
+//       h2 {
+//         font-size: 2.5rem;
+//         text-align: center;
+//       }
+//       p {
+//         font-family: "Noto Sans KR", sans-serif;
+//         width: 70%;
+//         margin: 0 auto;
+//       }
+//     }
+//     .responsive-homepage {
+//       width: 90%;
+//       margin-top: 100px;
+//       img {
+//         width: 100%;
+//       }
+//     }
+//   }
+// }
 </style>

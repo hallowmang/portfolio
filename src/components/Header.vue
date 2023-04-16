@@ -120,7 +120,7 @@ header {
 
     h1 {
       color: whitesmoke;
-      font-size: 1.5rem;
+      font-size: 3rem;
       font-weight: 800;
     }
     nav {
@@ -128,6 +128,7 @@ header {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      font-size: 2rem;
       a {
         font-weight: bold;
         color: whitesmoke;
@@ -152,10 +153,14 @@ header {
 /* 테블릿 CSS */
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
+  html {
+    font-size: 10px;
+  }
 
   header {
     .header-wrap {
-      padding: 15px 0;
+      width: 80%;
+      padding: 2% 0;
       h1 {
         font-size: 1.5rem;
       }
@@ -173,40 +178,35 @@ header {
 
 /* 모바일 CSS */
 @media screen and (max-width: 767px) {
-  html{
-    font-size: 10px;
+  html {
+    font-size: 8px;
   }
 
   header {
-  
-  &.bg {
-    
-  }
-  .header-wrap {
-    width: 80%;
-
-    h1 {
-      
-      font-size: 2rem;
-      
+    &.bg {
     }
-    nav {
-      font-size: 2rem;
-      justify-content: flex-end;
-      a {
-        font-weight: bold;
-        color: whitesmoke;
-        text-decoration: none;
-        &.router-link-exact-active {
-          background-color: antiquewhite;
+    .header-wrap {
+      width: 80%;
+      padding: 2% 0;
+      h1 {
+        font-size: 1.8rem;
+      }
+      nav {
+        font-size: 1.8rem;
+        justify-content: flex-end;
+        a {
+          font-weight: bold;
+          color: whitesmoke;
+          text-decoration: none;
+          &.router-link-exact-active {
+            background-color: antiquewhite;
+          }
+        }
+        > div {
+          display: none;
         }
       }
-      > div {
-        display: none;
-      }
     }
   }
-}
-
 }
 </style>

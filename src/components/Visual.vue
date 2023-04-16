@@ -291,15 +291,15 @@ export default {
   }
 
   .visual {
-    height: 50vh;
+    height: 100vh;
     h1 {
-      font-size: 11rem;
-      top: 90px;
+      font-size: 12rem;
+      top: 34%;
       :nth-child(1) {
-        padding-left: 15%;
+        padding-left: 7%;
       }
       :nth-child(2) {
-        padding-left: 30%;
+        padding-left: 22%;
       }
       :nth-child(3) {
         padding-left: 50%;
@@ -307,12 +307,12 @@ export default {
     }
 
     .text {
-      top: 48%;
+      bottom: 3%;
       font-size: 1.5rem;
     }
     .Images {
-      width: 21%;
-      top: 25%;
+      width: 50%;
+      top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
       img {
@@ -322,42 +322,40 @@ export default {
   }
 
   .project-container {
-  width: 90%;
-  height: 85vh;
-  margin: 0 auto;
-  h2 {
-    padding-top: 100px;
-    margin-bottom: 50px;
-    font-size: 4rem;
-    text-align: center;
-  }
-  .images {
-    width: 100%;
-    height: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    .image {
-      width: 32%;
-      height: 100%;
-      img {
-        width: 100%;
-        height: 50vh;
-        border-radius: 5px;
-        object-fit: cover;
-      }
-      h3 {
-        margin-top: 10px;
-        font-size: 2rem;
-      }
-      p {
-        
-        font-size: 1.8rem;
-        
+    width: 90%;
+    height: 85vh;
+    margin: 0 auto;
+    h2 {
+      padding-top: 100px;
+      margin-bottom: 50px;
+      font-size: 4rem;
+      text-align: center;
+    }
+    .images {
+      width: 100%;
+      height: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .image {
+        width: 32%;
+        height: 100%;
+        img {
+          width: 100%;
+          height: 50vh;
+          border-radius: 5px;
+          object-fit: cover;
+        }
+        h3 {
+          margin-top: 10px;
+          font-size: 2rem;
+        }
+        p {
+          font-size: 1.8rem;
+        }
       }
     }
   }
-}
 
   .about-container {
     margin-top: 0;
@@ -445,11 +443,10 @@ export default {
 
 /* 모바일 CSS */
 @media screen and (max-width: 767px) {
-
   .visual {
     height: 100vh;
     h1 {
-      font-size: 5.5rem;
+      font-size: 7.5rem;
       top: 40%;
       :nth-child(1) {
         padding-left: 7%;
@@ -465,7 +462,7 @@ export default {
     .text {
       bottom: 2%;
       font-size: 1.2rem;
-      :first-child{
+      :first-child {
         display: none;
       }
     }
@@ -481,151 +478,149 @@ export default {
   }
 
   .project-container {
-  width: 80%;
-  height: 100vh;
-  margin: 0 auto;
-  h2 {
-    padding-top: 25%;
-    margin-bottom: 50px;
-    font-size: 4rem;
-    text-align: center;
-  }
-  .images {
-    overflow: hidden;
-    .image {
-      width: 100%;
-      flex-shrink: 0;
-      img {
-        width: 100%;
-        height: 70vh;
-      }
-      h3 {
-        margin-top: 10px;
-        font-size: 2rem;
-      }
-      p {
-        font-size: 1.8rem;
-      }
-    }
-  }
-}
-
-.about-container {
-  width: 100%;
-  height: 80vh;
-  margin-top: 20%;
-  .about-wrap {
-    width: 100%;
+    width: 80%;
+    height: 100vh;
     margin: 0 auto;
-    padding: 35% 0;
-    > h2 {
+    h2 {
+      padding-top: 25%;
       margin-bottom: 50px;
       font-size: 4rem;
       text-align: center;
     }
-    img {
-      width: 40%;
-    }
-    h3 {
-      margin: 20px 0 10px 0;
-    }
-    p {
-      width: 54%;
-      font-size: 1.6rem;      
-    }
-    button {
-      position: relative;
-      display: inline-block;
-      cursor: pointer;
-      outline: none;
-      border: 0;
-      vertical-align: middle;
-      text-decoration: none;
-      background: transparent;
-      padding: 0;
-      font-size: inherit;
-      font-family: inherit;
-      margin-top: 30px;
-
-      &.learn-more {
-        width: 40%;
-        height: auto;
-        font-size: 1.2rem;
-      }
-      .circle {
-        transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-        position: relative;
-        display: block;
-        margin: 0;
-        width: 3rem;
-        height: 3rem;
-        background: #2c3e50;
-        border-radius: 1.625rem;
-
-        .icon {
-          transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-          position: absolute;
-          top: 0;
-          bottom: 0;
-          margin: auto;
-          background: #fff;
-
-          &.arrow {
-            transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-            left: 0.625rem;
-            width: 1.125rem;
-            height: 0.125rem;
-            background: none;
-
-            &::before {
-              position: absolute;
-              content: "";
-              top: -0.31rem;
-              right: 0.0625rem;
-              width: 0.625rem;
-              height: 0.625rem;
-              border-top: 0.125rem solid #fff;
-              border-right: 0.125rem solid #fff;
-              transform: rotate(45deg);
-            }
-          }
-        }
-      }
-
-      .button-text {
-        transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        padding: 0.75rem 0;
-        margin: 0 0 0 1.85rem;
-        color: #282936;
-        font-weight: 700;
-        line-height: 1.6;
-        text-align: center;
-        text-transform: uppercase;
-      }
-
-      &:hover {
-        .circle {
+    .images {
+      overflow: hidden;
+      .image {
+        width: 100%;
+        flex-shrink: 0;
+        img {
           width: 100%;
-
-          .icon.arrow {
-            background: #fff;
-            transform: translate(1rem, 0);
-          }
+          height: 70vh;
         }
-
-        .button-text {
-          color: #fff;
+        h3 {
+          margin-top: 10px;
+          font-size: 2.3rem;
+        }
+        p {
+          font-size: 2rem;
         }
       }
     }
   }
-}
 
+  .about-container {
+    width: 100%;
+    height: 100vh;
+    margin-top: 20%;
+    .about-wrap {
+      width: 100%;
+      margin: 0 auto;
+      padding: 35% 0;
+      > h2 {
+        margin-bottom: 50px;
+        font-size: 4rem;
+        text-align: center;
+      }
+      img {
+        width: 40%;
+      }
+      h3 {
+        margin: 20px 0 10px 0;
+      }
+      p {
+        width: 54%;
+        font-size: 1.8rem;
+      }
+      button {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+        outline: none;
+        border: 0;
+        vertical-align: middle;
+        text-decoration: none;
+        background: transparent;
+        padding: 0;
+        font-size: inherit;
+        font-family: inherit;
+        margin-top: 30px;
 
+        &.learn-more {
+          width: 40%;
+          height: auto;
+          font-size: 1.2rem;
+        }
+        .circle {
+          transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+          position: relative;
+          display: block;
+          margin: 0;
+          width: 3rem;
+          height: 3rem;
+          background: #2c3e50;
+          border-radius: 1.625rem;
+
+          .icon {
+            transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            background: #fff;
+
+            &.arrow {
+              transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+              left: 0.625rem;
+              width: 1.125rem;
+              height: 0.125rem;
+              background: none;
+
+              &::before {
+                position: absolute;
+                content: "";
+                top: -0.31rem;
+                right: 0.0625rem;
+                width: 0.625rem;
+                height: 0.625rem;
+                border-top: 0.125rem solid #fff;
+                border-right: 0.125rem solid #fff;
+                transform: rotate(45deg);
+              }
+            }
+          }
+        }
+
+        .button-text {
+          transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          padding: 0.75rem 0;
+          margin: 0 0 0 1.85rem;
+          color: #282936;
+          font-weight: 700;
+          line-height: 1.6;
+          text-align: center;
+          text-transform: uppercase;
+        }
+
+        &:hover {
+          .circle {
+            width: 100%;
+
+            .icon.arrow {
+              background: #fff;
+              transform: translate(1rem, 0);
+            }
+          }
+
+          .button-text {
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
 }
 </style>
