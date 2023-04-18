@@ -17,7 +17,7 @@
 
 <script>
 // @ is an alias to /src
-import Chair from "@/components/Chair.vue";
+import Chair from "@/components/Detail.vue";
 import Lelabo from "@/components/Lelabo.vue";
 import Movie from "@/components/Movie.vue";
 import Moitnyang from "@/components/Moitnyang.vue";

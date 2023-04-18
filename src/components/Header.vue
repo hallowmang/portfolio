@@ -7,23 +7,62 @@
 
       <nav>
         <div @click="scrollToIntro">Introduction</div>
-        <div class="projText" @click="scrollToProject">Project</div>
+        <div @click="scrollToProject">Project</div>
         <div @click="scrollToAbout">About</div>
-        <router-link to="/menulist">
+        <!-- <router-link to="/menulist">
           <fa :icon="['fas', 'bars']" />
-        </router-link>
+        </router-link> -->
+        <button
+          @click="toggleMenu(), menuListMove(), back()"
+          :class="{ 'menu-trigger': true, 'active-1': isActive }"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </nav>
     </div>
   </header>
 </template>
 
 <script>
+import { useRouter } from "vue-router";
+
 export default {
   name: "HeaderView",
+
+  setup() {
+    const router = useRouter();
+    const menuListMove = () => {
+      router.push({
+        path: "/menulist",
+      });
+    };
+    const back = () => {
+      router.back;
+    };
+    return {
+      menuListMove,
+      back,
+    };
+  },
+
+  data() {
+    return {
+      isActive: false,
+    };
+  },
+
+  //isActive값을 false로 초기화 이후 next() 함수를 호출하여 다음 단계로 이동
+  beforeRouteLeave(to, from, next) {
+    this.isActive = false;
+    next();
+  },
 
   mounted() {
     window.addEventListener("scroll", this.colorChangehandle);
   },
+
   methods: {
     scrollToIntro() {
       this.$router.push("/");
@@ -32,6 +71,7 @@ export default {
         visualContainer.scrollIntoView({ behavior: "smooth" });
       }, 200);
     },
+
     scrollToAbout() {
       this.$router.push("/");
       setTimeout(() => {
@@ -98,6 +138,10 @@ export default {
         navAll[2].classList.add("aaa");
       }
     },
+
+    toggleMenu() {
+      this.isActive = !this.isActive;
+    },
   },
 };
 </script>
@@ -120,7 +164,7 @@ header {
 
     h1 {
       color: whitesmoke;
-      font-size: 3rem;
+      font-size: 2rem;
       font-weight: 800;
     }
     nav {
@@ -128,15 +172,61 @@ header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-size: 2rem;
-      a {
-        font-weight: bold;
-        color: whitesmoke;
-        text-decoration: none;
-        &.router-link-exact-active {
-          background-color: antiquewhite;
+      font-size: 1rem;
+      // a {
+      //   font-weight: bold;
+      //   color: whitesmoke;
+      //   text-decoration: none;
+      //   &.router-link-exact-active {
+      //     background-color: antiquewhite;
+      //   }
+      // }
+      .menu-trigger {
+        background-color: transparent;
+        display: inline-block;
+        box-sizing: border-box;
+        position: relative;
+        width: 27px;
+        height: 16px;
+        border: none;
+        span {
+          display: inline-block;
+          position: absolute;
+          transition: all 0.6s ease;
+          left: 0;
+          width: 100%;
+          height: 1px;
+          background-color: #fff;
+          border-radius: 4px;
+        }
+
+        span:nth-of-type(1) {
+          top: 0;
+        }
+
+        span:nth-of-type(2) {
+          top: 9px;
+        }
+
+        span:nth-of-type(3) {
+          bottom: -3px;
+        }
+
+        &.active-1 {
+          span:nth-of-type(1) {
+            transform: translateY(7px) rotate(-40deg);
+          }
+
+          span:nth-of-type(2) {
+            opacity: 0;
+          }
+
+          span:nth-of-type(3) {
+            transform: translateY(-11px) rotate(40deg);
+          }
         }
       }
+
       > div {
         text-align: center;
         cursor: pointer;
@@ -167,6 +257,32 @@ header {
       nav {
         width: 40%;
         font-size: 1.2rem;
+        .menu-trigger {
+        width: 20px;
+        height: 10px;
+        
+        span {
+          
+        }
+
+        
+
+        span:nth-of-type(2) {
+          top: 6px;
+        }
+
+        
+
+        &.active-1 {
+          span:nth-of-type(1) {
+            transform: translateY(5px) rotate(-40deg);
+          }
+          
+          span:nth-of-type(3) {
+            transform: translateY(-7px) rotate(40deg);
+          }
+        }
+      }
         a {
         }
         > div {
@@ -194,13 +310,42 @@ header {
       nav {
         font-size: 1.8rem;
         justify-content: flex-end;
-        a {
-          font-weight: bold;
-          color: whitesmoke;
-          text-decoration: none;
-          &.router-link-exact-active {
-            background-color: antiquewhite;
+        .menu-trigger {
+        
+        width: 20px;
+        height: 10px;
+        
+        span {
+          
+        }
+
+        span:nth-of-type(1) {
+          top: 0;
+        }
+
+        span:nth-of-type(2) {
+          top: 6px;
+        }
+
+        span:nth-of-type(3) {
+          bottom: -3px;
+        }
+
+        &.active-1 {
+          span:nth-of-type(1) {
+            transform: translateY(5px) rotate(-40deg);
           }
+
+          span:nth-of-type(2) {
+            opacity: 0;
+          }
+
+          span:nth-of-type(3) {
+            transform: translateY(-7px) rotate(40deg);
+          }
+        }
+      }
+        a {
         }
         > div {
           display: none;

@@ -71,6 +71,7 @@ export default {
     this.id = this.$route.query.id;
 
     const bgMovie = document.querySelector(".detail-visual");
+    const reponSive = document.querySelector(".responsive-design")
 
     if (this.id == 2) {
       bgMovie.classList.add("bg-movie");
@@ -78,9 +79,9 @@ export default {
       bgMovie.classList.remove("bg-movie");
     }
 
-    // if(this.id == 2){
-
-    // }
+    if(this.id == 0){
+      reponSive.style.display = "none"
+    }
 
     window.scrollTo(0, 0); //페이지가 바뀌었을때 스크롤이 위에서 시작
   },
@@ -155,11 +156,11 @@ export default {
   height: 100%;
   background-color: #f5f5f5;
   .clone-wrap {
-    width: 70%;
+    width: 90%;
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
-    padding: 150px 0;
+    padding: 10% 0;
     .clone-title {
       width: 45%;
       margin: 100px 0;
@@ -173,6 +174,7 @@ export default {
         text-align: center;
         width: 70%;
         margin: 0 auto;
+        margin-top: 3%;
       }
     }
     .clone-homepage {
@@ -184,10 +186,43 @@ export default {
   }
 }
 
+.responsive-design {
+  width: 100%;
+  height: 100%;
+  background-color: #f5eded;
+  .responsive-wrap {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    padding: 150px 0;
+    .responsive-title {
+      width: 45%;
+      margin: 0 auto;
+      h2 {
+        font-size: 2.5rem;
+        text-align: center;
+      }
+      p {
+        font-family: "Noto Sans KR", sans-serif;
+        width: 70%;
+        margin: 0 auto;
+      }
+    }
+    .responsive-homepage {
+      width: 90%;
+      margin-top: 100px;
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+
 /* -------------------------------------  반응형  ------------------------------------- */
 /* 테블릿 CSS */
 @media (min-width: 768px) and (max-width: 1023px) {
-  
   .detail-visual {
     h1 {
       width: 50%;
@@ -244,27 +279,20 @@ export default {
   }
 
   .clone {
-    width: 100%;
-    height: 100%;
-    background-color: #f5f5f5;
     .clone-wrap {
-      width: 70%;
-      display: flex;
-      justify-content: space-between;
-      margin: 0 auto;
-      padding: 10% 0;
+      width: 90%;
+      padding: 20% 0;
       .clone-title {
         width: 45%;
         margin: 100px 0;
         h2 {
-          font-size: 2.5rem;
-          text-align: center;
+          font-size: 3rem;
         }
         p {
           font-family: "Noto Sans KR", sans-serif;
           font-size: 1.25rem;
           text-align: center;
-          width: 70%;
+          width: 90%;
           margin: 0 auto;
         }
       }
@@ -276,9 +304,154 @@ export default {
       }
     }
   }
+
+  .responsive-design {
+    width: 100%;
+    height: 100%;
+    background-color: #f5eded;
+    .responsive-wrap {
+      width: 70%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0 auto;
+      padding: 20% 0;
+      .responsive-title {
+        width: 60%;
+
+        h2 {
+          font-size: 3rem;
+        }
+        p {
+          width: 88%;
+          font-size: 1.25rem;
+        }
+      }
+      .responsive-homepage {
+        width: 100%;
+        margin-top: 10%;
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
 }
 
 /* 모바일 CSS */
 @media screen and (max-width: 767px) {
+  .detail-visual {
+    h1 {
+      width: 100%;
+      font-size: 2.7rem;
+      margin-top: 15px;
+    }
+    .detail-wrap {
+      width: 80%;
+      height: 100%;
+      padding: 11% 0;
+      .detail-wrap-top {
+        padding: 0;
+        position: relative;
+        a {
+          &:hover .arrow {
+            transform: translateX(5px);
+          }
+          .arrow {
+            transition: transform 0.5s ease;
+          }
+        }
+        .detail-text {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: flex-start;
+          margin-top: 5%;
+          p {
+            width: 100%;
+            font-size: 1.2rem;
+          }
+          .tools {
+            margin: 10% 0;
+            > p {
+              font-size: 1.5rem;
+              margin-bottom: 5px;
+            }
+            svg {
+              font-size: 2.5rem;
+              margin-right: 20px;
+              &:last-child {
+                margin-right: 0;
+              }
+            }
+          }
+        }
+        > a {
+          font-size: 1.1rem;
+          position: absolute;
+          right: 0;
+          bottom: 15%;
+        }
+      }
+      img {
+        width: 100%;
+        margin-top: 10%;
+      }
+    }
+  }
+
+  .clone {
+    .clone-wrap {
+      flex-direction: column;
+      align-items: center;
+      padding: 10% 0;
+      .clone-title {
+        width: 90%;
+        margin: 7% 0;
+        h2 {
+          font-size: 3rem;
+        }
+        p {
+          width: 100%;
+          font-size: 1.4rem;
+          text-align: center;
+          margin: 0 auto;
+        }
+      }
+      .clone-homepage {
+        width: 90%;
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .responsive-design {
+    width: 100%;
+    height: 100%;
+    background-color: #f5eded;
+    .responsive-wrap {
+      width: 90%;
+      padding: 20% 0;
+      .responsive-title {
+        width: 90%;
+        h2 {
+          font-size: 3rem;
+        }
+        p {
+          width: 90%;
+          font-size: 1.4rem;
+        }
+      }
+      .responsive-homepage {
+        width: 100%;
+        margin-top: 10%;
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
 }
 </style>

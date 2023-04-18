@@ -22,21 +22,44 @@
     <section class="project-container main-con">
       <h2>Project</h2>
       <div class="images">
-        <router-link to="./Chair?id=0" class="image">
-          <img src="@/assets/img/chair.jpg" alt="" />
-          <h3>Clone coding</h3>
-          <p>체어마이스터</p>
-        </router-link>
-        <router-link to="./Chair?id=1" class="image">
-          <img src="@/assets/img/lelabo.jpg" alt="" />
-          <h3>Renewal design</h3>
-          <p>LELABO</p>
-        </router-link>
-        <router-link to="./Chair?id=2" class="image">
-          <img src="@/assets/img/poster2.jpg" alt="" />
-          <h3>React API project</h3>
-          <p>YFLIX</p>
-        </router-link>
+        <swiper
+          v-bind="swiperOptions"
+          :pagination="true"
+          :modules="modules"
+          :slides-per-view="3"
+          :space-between="50"
+          @swiper="onSwiper"
+          @slideChange="onSlideChange"
+        >
+          <swiper-slide>
+            <router-link to="./Detail?id=0" class="image">
+              <img src="@/assets/img/chair.jpg" alt="" />
+              <h3>Clone coding</h3>
+              <p>체어마이스터</p>
+            </router-link>
+          </swiper-slide>
+          <swiper-slide>
+            <router-link to="./Detail?id=1" class="image">
+              <img src="@/assets/img/lelabo.jpg" alt="" />
+              <h3>Renewal design</h3>
+              <p>LELABO</p>
+            </router-link>
+          </swiper-slide>
+          <swiper-slide>
+            <router-link to="./Detail?id=2" class="image">
+              <img src="@/assets/img/poster2.jpg" alt="" />
+              <h3>React API project</h3>
+              <p>YFLIX</p>
+            </router-link>
+          </swiper-slide>
+          <swiper-slide>
+            <router-link to="./Detail?id=2" class="image">
+              <img src="@/assets/img/poster2.jpg" alt="" />
+              <h3>React API project</h3>
+              <p>YFLIX</p>
+            </router-link>
+          </swiper-slide>
+        </swiper>
       </div>
     </section>
 
@@ -59,8 +82,57 @@
 </template>
 
 <script>
+// Import Swiper Vue.js components
+import { Swiper, SwiperSlide } from "swiper/vue";
+
+// Import Swiper styles
+import "swiper/scss";
+import "swiper/scss/pagination";
+import "@/assets/scss/swiperStyle.scss";
+
+// import required modules
+import { Pagination } from "swiper";
+
 export default {
   name: "IntroductionView",
+
+  data() {
+    return {
+      swiperOptions: {
+        breakpoints: {
+          // when window width is >= 320px
+          320: {
+            slidesPerView: 1,
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 20
+          },
+          1024:{
+            slidesPerView: 3,
+          }
+        },
+      },
+    };
+  },
+
+  components: {
+    Swiper,
+    SwiperSlide,
+  },
+  setup() {
+    const onSwiper = (swiper) => {
+      console.log(swiper);
+    };
+    const onSlideChange = () => {
+      console.log("slide change");
+    };
+    return {
+      onSwiper,
+      onSlideChange,
+      modules: [Pagination],
+    };
+  },
 
   methods: {
     //about페이지로 이동
@@ -130,32 +202,40 @@ export default {
     font-size: 3rem;
     text-align: center;
   }
-  .images {
-    width: 100%;
-    height: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    .image {
-      width: 32%;
-      height: 100%;
-      img {
-        width: 100%;
-        height: 70vh;
-        border-radius: 5px;
-        object-fit: cover;
-      }
-      h3 {
-        margin-top: 10px;
-        font-size: 1.25rem;
-      }
-      p {
-        font-family: "Noto Sans KR", sans-serif;
-        font-size: 1.125rem;
-        font-weight: 300;
-      }
-    }
-  }
+  // .images {
+  //   width: 100%;
+  //   height: auto;
+  //   position: relative;
+  //   > .swiper {
+  //     width: 100%;
+  //     height: 100%;
+  //     display: flex;
+  //     .image {
+  //       width: 100%;
+  //       height: 100%;
+  //       .swiper-slide {
+  //         width: 70%;
+  //         // text-align: center;
+  //         /* Center slide text vertically */
+  //         > img {
+  //           width: 100%;
+  //           height: 70vh;
+  //           border-radius: 5px;
+  //           object-fit: cover;
+  //         }
+  //       }
+  //     }
+  //     h3 {
+  //       margin-top: 10px;
+  //       font-size: 1.25rem;
+  //     }
+  //     p {
+  //       font-family: "Noto Sans KR", sans-serif;
+  //       font-size: 1.125rem;
+  //       font-weight: 300;
+  //     }
+  //   }
+  // }
 }
 
 .about-container {
@@ -323,7 +403,7 @@ export default {
 
   .project-container {
     width: 90%;
-    height: 85vh;
+    height: 100vh;
     margin: 0 auto;
     h2 {
       padding-top: 100px;
@@ -331,30 +411,30 @@ export default {
       font-size: 4rem;
       text-align: center;
     }
-    .images {
-      width: 100%;
-      height: auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      .image {
-        width: 32%;
-        height: 100%;
-        img {
-          width: 100%;
-          height: 50vh;
-          border-radius: 5px;
-          object-fit: cover;
-        }
-        h3 {
-          margin-top: 10px;
-          font-size: 2rem;
-        }
-        p {
-          font-size: 1.8rem;
-        }
-      }
-    }
+    // .images {
+    //   width: 100%;
+    //   height: auto;
+    //   display: flex;
+    //   justify-content: space-between;
+    //   align-items: center;
+    //   .image {
+    //     width: 32%;
+    //     height: 100%;
+    //     img {
+    //       width: 100%;
+    //       height: 50vh;
+    //       border-radius: 5px;
+    //       object-fit: cover;
+    //     }
+    //     h3 {
+    //       margin-top: 10px;
+    //       font-size: 2rem;
+    //     }
+    //     p {
+    //       font-size: 1.8rem;
+    //     }
+    //   }
+    // }
   }
 
   .about-container {
@@ -487,24 +567,24 @@ export default {
       font-size: 4rem;
       text-align: center;
     }
-    .images {
-      overflow: hidden;
-      .image {
-        width: 100%;
-        flex-shrink: 0;
-        img {
-          width: 100%;
-          height: 70vh;
-        }
-        h3 {
-          margin-top: 10px;
-          font-size: 2.3rem;
-        }
-        p {
-          font-size: 2rem;
-        }
-      }
-    }
+    // .images {
+    //   overflow: hidden;
+    //   .image {
+    //     width: 100%;
+    //     flex-shrink: 0;
+    //     img {
+    //       width: 100%;
+    //       height: 70vh;
+    //     }
+    //     h3 {
+    //       margin-top: 10px;
+    //       font-size: 2.3rem;
+    //     }
+    //     p {
+    //       font-size: 2rem;
+    //     }
+    //   }
+    // }
   }
 
   .about-container {
