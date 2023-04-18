@@ -147,7 +147,7 @@ export default {};
   height: 100%;
   .profile {
     width: 70%;
-    // height: 90vh;
+    height: 100%;
     padding: 150px 0;
     display: flex;
     justify-content: center;
