@@ -3,44 +3,46 @@
     <section class="detail-visual">
       <div class="detail-wrap">
         <div class="detail-wrap-top">
-          <p>{{ data.website[id].subtitle }}</p>
-          <h1>{{ data.website[id].title }}</h1>
+          
+          <p> <!-- {{type == app ? data.app[id].subtitle : ''} }{{ data.website[id].subtitle }}, {{ data.app[id].subtitle }}-->  {{type == 'app'?data.app[id].subtitle : data.website[id].subtitle }} </p>
+          <h1>{{type == 'app'?data.app[id].title : data.website[id].title }} </h1>
           <div class="detail-text">
             <p>
-              {{ data.website[id].text }}
+              {{type == 'app'?data.app[id].text : data.website[id].text }}
             </p>
             <div class="tools">
               <p>Tools</p>
               <fa
-                v-for="v in data.website[id].tools"
+                v-for="v in data.app[id].tools"
                 :key="v.id"
                 :icon="['fab', v]"
               />
             </div>
           </div>
           <router-link to="#">
-            {{ data.website[id].url }}
+            {{type == 'app'?data.app[id].url : data.website[id].url }}
             <fa :icon="['fa', 'arrow-right']" class="arrow" />
           </router-link>
         </div>
-        <img :src="data.website[id].img" alt="" />
+        <img :src="data.website[id].img" alt="" v-if="type != 'app'" />
         <!-- <img src="@/assets/img/Chair-Meister-main-page.png" alt="" /> -->
       </div>
     </section>
-
-    <section class="clone">
-      <div class="clone-wrap">
-        <div class="clone-title">
-          <h2>{{ data.website[id].webDesign }}</h2>
-          <p>{{ data.website[id].designText }}.</p>
+    
+      <section class="clone" v-if="type != 'app'">
+        <div class="clone-wrap">
+          <div class="clone-title">
+            <h2>{{ data.website[id].webDesign }}</h2>
+            <p>{{ data.website[id].designText }}.</p>
+          </div>
+          <div class="clone-homepage">
+            <img :src="data.website[id].designImg" alt="" />
+          </div>
         </div>
-        <div class="clone-homepage">
-          <img :src="data.website[id].designImg" alt="" />
-        </div>
-      </div>
-    </section>
+      </section>
+    
 
-    <section class="responsive-design">
+    <section class="responsive-design"  v-if="type != 'app'">
       <div class="responsive-wrap">
         <div class="responsive-title">
           <h2>{{ data.website[id].responsive }}</h2>
@@ -53,6 +55,23 @@
         </div>
       </div>
     </section>
+
+    <section class="responsive-design"  v-if="type == 'app'">
+      <div class="responsive-wrap">
+        <div class="responsive-title">
+          <h2>{{ data.app[id].design }}</h2>
+          <p>
+            {{ data.app[id].designText }}
+          </p>
+        </div>
+        <div class="responsive-homepage">
+          <img :src="data.app[id].designImg" alt="" />
+        </div>
+      </div>
+    </section>
+
+
+
   </div>
 </template>
 
@@ -65,11 +84,12 @@ export default {
     return {
       data: projData,
       id: 0,
+      type:''
     };
   },
   mounted() {
     this.id = this.$route.query.id;
-
+    this.type = this.$route.query.type;
     const bgMovie = document.querySelector(".detail-visual");
     const reponSive = document.querySelector(".responsive-design")
 

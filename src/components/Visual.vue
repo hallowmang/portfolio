@@ -53,7 +53,7 @@
             </router-link>
           </swiper-slide>
           <swiper-slide>
-            <router-link to="./Detail?id=2" class="image">
+            <router-link to="./Detail?id=0&&type=app" class="image">
               <img src="@/assets/img/moitnyang-start.png" alt="" />
               <h3>NEXT.js project</h3>
               <p>Moitnyang</p>
@@ -529,10 +529,10 @@ export default {
       font-size: 7.5rem;
       top: 40%;
       :nth-child(1) {
-        padding-left: 7%;
+        padding-left: 4%;
       }
       :nth-child(2) {
-        padding-left: 23%;
+        padding-left: 18%;
       }
       :nth-child(3) {
         padding-left: 50%;

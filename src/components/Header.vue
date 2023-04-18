@@ -13,7 +13,7 @@
           <fa :icon="['fas', 'bars']" />
         </router-link> -->
         <button
-          @click="toggleMenu(), menuListMove(), back()"
+          @click="toggleMenu(), menuListMove(), back(), beforeRouteLeave()"
           :class="{ 'menu-trigger': true, 'active-1': isActive }"
         >
           <span></span>
@@ -39,7 +39,7 @@ export default {
       });
     };
     const back = () => {
-      router.back;
+      router.go(-1);
     };
     return {
       menuListMove,
@@ -53,7 +53,7 @@ export default {
     };
   },
 
-  //isActive값을 false로 초기화 이후 next() 함수를 호출하여 다음 단계로 이동
+  //isActive값을 false로 초기화 이후 next() 함수를 호출하여 다음 페이지로 이동
   beforeRouteLeave(to, from, next) {
     this.isActive = false;
     next();

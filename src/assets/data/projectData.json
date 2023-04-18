@@ -83,11 +83,12 @@
       "title": "Moitnyang",
       "text": "CRUD를 활용한 프로젝트를 만들고 싶어, 팀원들과 상의한 결과, 중고거래 어플리케이션을 만들자는 의견이 나왔습니다. 까칠한 고양이를 컨셉으로 디자인 하였습니다. 중고거래이기 때문에 화려한 디자인 보다는 사용자 편의를 위해 명확하며, 한 화면에 기능을 넣으려 노력했습니다.",
       "url": "VIEW PROJECT",
-      "tools": "Tools",
+      "tools": ["react","./img/logos/NEXT.JS-logo.png","./img/logos/Tailwind-CSS-logo2.png","sass"],
       "img": "./img/Moitnyang-main-visual.png",
       "design": "design",
       "designText": "많은 사용자가 스마트폰을 통한 브라우징을 선호한다는 점을 고려하여 모바일 버전도 설계했습니다.",
       "designImg": "./img/Moitnyang-design.png"
     }
   ]
+  
 }
