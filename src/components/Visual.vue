@@ -54,9 +54,9 @@
           </swiper-slide>
           <swiper-slide>
             <router-link to="./Detail?id=2" class="image">
-              <img src="@/assets/img/poster2.jpg" alt="" />
-              <h3>React API project</h3>
-              <p>YFLIX</p>
+              <img src="@/assets/img/moitnyang-start.png" alt="" />
+              <h3>NEXT.js project</h3>
+              <p>Moitnyang</p>
             </router-link>
           </swiper-slide>
         </swiper>
@@ -459,7 +459,7 @@ export default {
       }
       button {
         &.learn-more {
-          width: 15%;
+          width: 18%;
         }
         .circle {
           transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
@@ -625,7 +625,7 @@ export default {
         margin-top: 30px;
 
         &.learn-more {
-          width: 40%;
+          width: 35%;
           height: auto;
           font-size: 1.2rem;
         }

@@ -3,7 +3,7 @@
     <section class="profile">
       <div class="info">
         <h1>
-          <span>HEOLL!</span><br />
+          <span>HELLO!</span><br />
           최시영입니다.<br />
           반갑습니다.
         </h1>
@@ -175,6 +175,7 @@ export default {};
     }
     img {
       width: 35%;
+      border-radius: 5px;
     }
   }
 

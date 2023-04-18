@@ -59,11 +59,11 @@ export default {
   background-color: #fcfbf9;
   height: 100%;
   footer {
+    width: 100%;
     display: none;
     position: fixed;
+    text-align: center;
     bottom: 15px;
-    left: 50%;
-    transform: translate(-50%, 0);
     transition: opacity 2s ease-in-out;
     opacity: 0;
     &.show {
@@ -72,4 +72,23 @@ export default {
     }
   }
 }
+
+/* 모바일 CSS */
+@media screen and (max-width: 767px) {
+
+  .container {
+  footer {
+    display: none;
+    position: fixed;
+    bottom: 15px;
+    transition: opacity 2s ease-in-out;
+    opacity: 0;
+    &.show {
+      display: block;
+      opacity: 1;
+    }
+  }
+}
+}
+
 </style>

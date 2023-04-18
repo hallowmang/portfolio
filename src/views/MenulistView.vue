@@ -5,15 +5,9 @@
         <li>
           <router-link to="/"> Introduction </router-link>
         </li>
-        <li>
-          
-            
-            
-              <router-link to="#"> Project </router-link>
-            
-          
+        <li>       
+          <router-link to="#"> Project </router-link>
         </li>
-
         <li>
           <router-link to="/about"> About </router-link>
         </li>

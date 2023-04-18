@@ -189,6 +189,7 @@ header {
         width: 27px;
         height: 16px;
         border: none;
+        cursor: pointer;
         span {
           display: inline-block;
           position: absolute;
