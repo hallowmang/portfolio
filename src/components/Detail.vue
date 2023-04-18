@@ -2,9 +2,8 @@
   <div>
     <section class="detail-visual">
       <div class="detail-wrap">
-        <div class="detail-wrap-top">
-          
-          <p> <!-- {{type == app ? data.app[id].subtitle : ''} }{{ data.website[id].subtitle }}, {{ data.app[id].subtitle }}-->  {{type == 'app'?data.app[id].subtitle : data.website[id].subtitle }} </p>
+        <div class="detail-wrap-top">          
+          <p> {{type == 'app'?data.app[id].subtitle : data.website[id].subtitle }} </p>
           <h1>{{type == 'app'?data.app[id].title : data.website[id].title }} </h1>
           <div class="detail-text">
             <p>
@@ -13,7 +12,7 @@
             <div class="tools">
               <p>Tools</p>
               <fa
-                v-for="v in data.app[id].tools"
+                v-for="v in data.website[id].tools"
                 :key="v.id"
                 :icon="['fab', v]"
               />
@@ -373,6 +372,12 @@ export default {
       .detail-wrap-top {
         padding: 0;
         position: relative;
+        p{
+          font-size: 1rem;
+        }
+        h1{
+          font-size: 3rem;
+        }
         a {
           &:hover .arrow {
             transform: translateX(5px);
@@ -389,16 +394,16 @@ export default {
           margin-top: 5%;
           p {
             width: 100%;
-            font-size: 1.2rem;
+            font-size: 1.5rem;
           }
           .tools {
             margin: 10% 0;
             > p {
-              font-size: 1.5rem;
+              font-size: 2rem;
               margin-bottom: 5px;
             }
             svg {
-              font-size: 2.5rem;
+              font-size: 3rem;
               margin-right: 20px;
               &:last-child {
                 margin-right: 0;
@@ -407,7 +412,7 @@ export default {
           }
         }
         > a {
-          font-size: 1.1rem;
+          font-size: 1.5rem;
           position: absolute;
           right: 0;
           bottom: 15%;
@@ -435,7 +440,7 @@ export default {
           width: 100%;
           font-size: 1.4rem;
           text-align: center;
-          margin: 0 auto;
+          margin-top:5%;
         }
       }
       .clone-homepage {
@@ -461,7 +466,7 @@ export default {
         }
         p {
           width: 90%;
-          font-size: 1.4rem;
+          font-size: 1.5rem;
         }
       }
       .responsive-homepage {
