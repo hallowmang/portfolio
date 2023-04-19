@@ -2,12 +2,18 @@
   <div>
     <section class="detail-visual">
       <div class="detail-wrap">
-        <div class="detail-wrap-top">          
-          <p> {{type == 'app'?data.app[id].subtitle : data.website[id].subtitle }} </p>
-          <h1>{{type == 'app'?data.app[id].title : data.website[id].title }} </h1>
+        <div class="detail-wrap-top">
+          <p>
+            {{
+              type == "app" ? data.app[id].subtitle : data.website[id].subtitle
+            }}
+          </p>
+          <h1>
+            {{ type == "app" ? data.app[id].title : data.website[id].title }}
+          </h1>
           <div class="detail-text">
             <p>
-              {{type == 'app'?data.app[id].text : data.website[id].text }}
+              {{ type == "app" ? data.app[id].text : data.website[id].text }}
             </p>
             <div class="tools">
               <p>Tools</p>
@@ -18,30 +24,33 @@
               />
             </div>
           </div>
-          <router-link to="#">
-            {{type == 'app'?data.app[id].url : data.website[id].url }}
+          <a
+            :href="
+              type === 'app' ? data.app[id].homepage : data.website[id].homepage
+            "
+          >
+            {{ type == "app" ? data.app[id].url : data.website[id].url }}
             <fa :icon="['fa', 'arrow-right']" class="arrow" />
-          </router-link>
+          </a>
         </div>
         <img :src="data.website[id].img" alt="" v-if="type != 'app'" />
         <!-- <img src="@/assets/img/Chair-Meister-main-page.png" alt="" /> -->
       </div>
     </section>
-    
-      <section class="clone" v-if="type != 'app'">
-        <div class="clone-wrap">
-          <div class="clone-title">
-            <h2>{{ data.website[id].webDesign }}</h2>
-            <p>{{ data.website[id].designText }}.</p>
-          </div>
-          <div class="clone-homepage">
-            <img :src="data.website[id].designImg" alt="" />
-          </div>
-        </div>
-      </section>
-    
 
-    <section class="responsive-design"  v-if="type != 'app'">
+    <section class="clone" v-if="type != 'app'">
+      <div class="clone-wrap">
+        <div class="clone-title">
+          <h2>{{ data.website[id].webDesign }}</h2>
+          <p>{{ data.website[id].designText }}.</p>
+        </div>
+        <div class="clone-homepage">
+          <img :src="data.website[id].designImg" alt="" />
+        </div>
+      </div>
+    </section>
+
+    <section class="responsive-design" v-if="type != 'app'">
       <div class="responsive-wrap">
         <div class="responsive-title">
           <h2>{{ data.website[id].responsive }}</h2>
@@ -55,7 +64,7 @@
       </div>
     </section>
 
-    <section class="responsive-design"  v-if="type == 'app'">
+    <section class="responsive-design" v-if="type == 'app'">
       <div class="responsive-wrap">
         <div class="responsive-title">
           <h2>{{ data.app[id].design }}</h2>
@@ -68,9 +77,6 @@
         </div>
       </div>
     </section>
-
-
-
   </div>
 </template>
 
@@ -83,14 +89,14 @@ export default {
     return {
       data: projData,
       id: 0,
-      type:''
+      type: "",
     };
   },
   mounted() {
     this.id = this.$route.query.id;
     this.type = this.$route.query.type;
     const bgMovie = document.querySelector(".detail-visual");
-    const reponSive = document.querySelector(".responsive-design")
+    const reponSive = document.querySelector(".responsive-design");
 
     if (this.id == 2) {
       bgMovie.classList.add("bg-movie");
@@ -98,8 +104,8 @@ export default {
       bgMovie.classList.remove("bg-movie");
     }
 
-    if(this.id == 0){
-      reponSive.style.display = "none"
+    if (this.id == 0) {
+      reponSive.style.display = "none";
     }
 
     window.scrollTo(0, 0); //페이지가 바뀌었을때 스크롤이 위에서 시작
@@ -372,10 +378,10 @@ export default {
       .detail-wrap-top {
         padding: 0;
         position: relative;
-        p{
+        p {
           font-size: 1rem;
         }
-        h1{
+        h1 {
           font-size: 3rem;
         }
         a {
@@ -440,7 +446,7 @@ export default {
           width: 100%;
           font-size: 1.4rem;
           text-align: center;
-          margin-top:5%;
+          margin-top: 5%;
         }
       }
       .clone-homepage {

@@ -13,7 +13,7 @@
           <fa :icon="['fas', 'bars']" />
         </router-link> -->
         <button
-          @click="toggleMenu(), menuListMove(), back(), beforeRouteLeave()"
+          @click="toggleMenu(), menuListMove(), back() /* beforeRouteLeave() */"
           :class="{ 'menu-trigger': true, 'active-1': isActive }"
         >
           <span></span>
@@ -39,7 +39,9 @@ export default {
       });
     };
     const back = () => {
-      router.go(-1);
+      router.push({
+        path: "/menulist",
+      });
     };
     return {
       menuListMove,
@@ -54,10 +56,10 @@ export default {
   },
 
   //isActive값을 false로 초기화 이후 next() 함수를 호출하여 다음 페이지로 이동
-  beforeRouteLeave(to, from, next) {
-    this.isActive = false;
-    next();
-  },
+  // beforeRouteLeave(to, from, next) {
+  //   this.isActive = false;
+  //   next();
+  // },
 
   mounted() {
     window.addEventListener("scroll", this.colorChangehandle);
@@ -259,31 +261,26 @@ header {
         width: 40%;
         font-size: 1.2rem;
         .menu-trigger {
-        width: 20px;
-        height: 10px;
-        
-        span {
-          
-        }
+          width: 20px;
+          height: 10px;
 
-        
-
-        span:nth-of-type(2) {
-          top: 6px;
-        }
-
-        
-
-        &.active-1 {
-          span:nth-of-type(1) {
-            transform: translateY(5px) rotate(-40deg);
+          span {
           }
-          
-          span:nth-of-type(3) {
-            transform: translateY(-7px) rotate(40deg);
+
+          span:nth-of-type(2) {
+            top: 6px;
+          }
+
+          &.active-1 {
+            span:nth-of-type(1) {
+              transform: translateY(5px) rotate(-40deg);
+            }
+
+            span:nth-of-type(3) {
+              transform: translateY(-7px) rotate(40deg);
+            }
           }
         }
-      }
         a {
         }
         > div {
@@ -312,40 +309,38 @@ header {
         font-size: 1.8rem;
         justify-content: flex-end;
         .menu-trigger {
-        
-        width: 20px;
-        height: 10px;
-        
-        span {
-          
-        }
+          width: 20px;
+          height: 10px;
 
-        span:nth-of-type(1) {
-          top: 0;
-        }
+          span {
+          }
 
-        span:nth-of-type(2) {
-          top: 6px;
-        }
-
-        span:nth-of-type(3) {
-          bottom: -3px;
-        }
-
-        &.active-1 {
           span:nth-of-type(1) {
-            transform: translateY(5px) rotate(-40deg);
+            top: 0;
           }
 
           span:nth-of-type(2) {
-            opacity: 0;
+            top: 6px;
           }
 
           span:nth-of-type(3) {
-            transform: translateY(-7px) rotate(40deg);
+            bottom: -3px;
+          }
+
+          &.active-1 {
+            span:nth-of-type(1) {
+              transform: translateY(5px) rotate(-40deg);
+            }
+
+            span:nth-of-type(2) {
+              opacity: 0;
+            }
+
+            span:nth-of-type(3) {
+              transform: translateY(-7px) rotate(40deg);
+            }
           }
         }
-      }
         a {
         }
         > div {

@@ -1,61 +1,62 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/IntroductionView.vue'
-import ProjectView from '../views/ProjectView.vue'
-import MenulistView from '../views/MenulistView.vue'
-import Chair from "../components/Detail.vue"
+import { createRouter, createWebHistory } from "vue-router";
+import HomeView from "../views/IntroductionView.vue";
+import ProjectView from "../views/ProjectView.vue";
+import MenulistView from "../views/MenulistView.vue";
+import Chair from "../components/Detail.vue";
 import Lelabo from "@/components/Lelabo.vue";
 import Movie from "@/components/Movie.vue";
-import Detail from "@/components/Detail.vue"
+import Detail from "@/components/Detail.vue";
 
 const routes = [
   {
-    path: '/',
-    name: 'home',
-    component: HomeView
+    path: "/",
+    name: "home",
+    component: HomeView,
   },
   {
-    path: '/about',
-    name: 'about',
+    path: "/about",
+    name: "about",
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
   },
   {
-    path: '/project',
-    name: 'project',
-    component: ProjectView
+    path: "/project",
+    name: "project",
+    component: ProjectView,
   },
   {
-    path: '/menulist',
-    name: 'menulist',
-    component: MenulistView
+    path: "/menulist",
+    name: "menulist",
+    component: MenulistView,
   },
   {
-    path: '/chair',
-    name: 'Chair',
-    component: Chair
+    path: "/chair",
+    name: "Chair",
+    component: Chair,
   },
   {
-    path: '/lelabo',
-    name: 'Lelabo',
-    component: Lelabo
+    path: "/lelabo",
+    name: "Lelabo",
+    component: Lelabo,
   },
   {
-    path: '/movie',
-    name: 'Movie',
-    component: Movie
+    path: "/movie",
+    name: "Movie",
+    component: Movie,
   },
   {
-    path: '/detail',
-    name: 'Detail',
-    component: Detail
-  }
-]
+    path: "/detail",
+    name: "Detail",
+    component: Detail,
+  },
+];
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
-  routes
-})
+  routes,
+});
 
-export default router
+export default router;
