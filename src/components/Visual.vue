@@ -202,40 +202,6 @@ export default {
     font-size: 3rem;
     text-align: center;
   }
-  // .images {
-  //   width: 100%;
-  //   height: auto;
-  //   position: relative;
-  //   > .swiper {
-  //     width: 100%;
-  //     height: 100%;
-  //     display: flex;
-  //     .image {
-  //       width: 100%;
-  //       height: 100%;
-  //       .swiper-slide {
-  //         width: 70%;
-  //         // text-align: center;
-  //         /* Center slide text vertically */
-  //         > img {
-  //           width: 100%;
-  //           height: 70vh;
-  //           border-radius: 5px;
-  //           object-fit: cover;
-  //         }
-  //       }
-  //     }
-  //     h3 {
-  //       margin-top: 10px;
-  //       font-size: 1.25rem;
-  //     }
-  //     p {
-  //       font-family: "Noto Sans KR", sans-serif;
-  //       font-size: 1.125rem;
-  //       font-weight: 300;
-  //     }
-  //   }
-  // }
 }
 
 .about-container {

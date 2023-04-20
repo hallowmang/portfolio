@@ -3,20 +3,27 @@
     <div class="main-nav">
       <ul>
         <li>
-          <router-link to="/"> Introduction </router-link>
+          <router-link to="/" @click="toggleMenu" > Introduction </router-link>
         </li>
         <li>       
-          <router-link to="#"> Project </router-link>
+          <router-link to="/Detail" @click="toggleMenu"> Project </router-link>
         </li>
         <li>
-          <router-link to="/about"> About </router-link>
+          <router-link to="/about" @click="toggleMenu"> About </router-link>
         </li>
       </ul>
     </div>
   </div>
 </template>
 <script>
-export default {};
+import { mapMutations } from 'vuex';
+export default {
+
+  methods:{
+    ...mapMutations(['toggleMenu']),
+    
+  }
+};
 </script>
 <style lang="scss">
 $menu-bg: #000;

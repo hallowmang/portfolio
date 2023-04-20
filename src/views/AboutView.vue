@@ -120,7 +120,12 @@
 </template>
 
 <script>
-export default {};
+export default {
+
+  mounted(){
+    window.scrollTo(0, 0); //페이지가 바뀌었을때 스크롤이 위에서 시작
+  }
+};
 </script>
 
 <style lang="scss">

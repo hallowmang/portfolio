@@ -4,17 +4,18 @@
       <router-link to="/">
         <h1>SIYOUNG</h1>
       </router-link>
-
       <nav>
-        <div @click="scrollToIntro">Introduction</div>
-        <div @click="scrollToProject">Project</div>
-        <div @click="scrollToAbout">About</div>
-        <!-- <router-link to="/menulist">
-          <fa :icon="['fas', 'bars']" />
-        </router-link> -->
+        <div class="bullets">
+          <div @click="() => scrollToIntro('.visual-container')"></div>
+          <div @click="() => scrollToIntro('.project-container')"></div>
+          <div @click="() => scrollToIntro('.about-container')"></div>
+        </div>
         <button
-          @click="toggleMenu(), menuListMove(), back() /* beforeRouteLeave() */"
-          :class="{ 'menu-trigger': true, 'active-1': isActive }"
+          @click="
+            toggleMenu();
+            back();
+          "
+          :class="{ 'menu-trigger': true, 'active-1': $store.state.isActive }"
         >
           <span></span>
           <span></span>
@@ -27,10 +28,10 @@
 
 <script>
 import { useRouter } from "vue-router";
+import { mapMutations } from "vuex";
 
 export default {
   name: "HeaderView",
-
   setup() {
     const router = useRouter();
     const menuListMove = () => {
@@ -38,63 +39,36 @@ export default {
         path: "/menulist",
       });
     };
-    const back = () => {
-      router.push({
-        path: "/menulist",
-      });
-    };
+
     return {
       menuListMove,
-      back,
     };
   },
-
   data() {
     return {
       isActive: false,
     };
   },
-
-  //isActive값을 false로 초기화 이후 next() 함수를 호출하여 다음 페이지로 이동
-  // beforeRouteLeave(to, from, next) {
-  //   this.isActive = false;
-  //   next();
-  // },
-
   mounted() {
+    
     window.addEventListener("scroll", this.colorChangehandle);
+    
   },
-
   methods: {
-    scrollToIntro() {
+    ...mapMutations(["toggleMenu"]),
+    scrollToIntro(ele) {
+      console.log(ele);
       this.$router.push("/");
       setTimeout(() => {
-        const visualContainer = document.querySelector(".visual-container");
+        const visualContainer = document.querySelector(ele);
         visualContainer.scrollIntoView({ behavior: "smooth" });
+        this.isActive = false;
       }, 200);
     },
-
-    scrollToAbout() {
-      this.$router.push("/");
-      setTimeout(() => {
-        const aboutContainer = document.querySelector(".about-container");
-        aboutContainer.scrollIntoView({ behavior: "smooth" });
-      }, 200);
-    },
-
-    scrollToProject() {
-      this.$router.push("/");
-      setTimeout(() => {
-        const projectContainer = document.querySelector(".project-container");
-        projectContainer.scrollIntoView({ behavior: "smooth" });
-      }, 200);
-    },
-
     colorChangehandle() {
       let name = this.$route.name;
       const header = document.querySelector("header");
-      const navAll = document.querySelectorAll("header nav div");
-
+      const navAll = document.querySelectorAll("header nav .bullets div");
       const mainCon = document.querySelectorAll(".main-con");
       let pos = [];
       mainCon.forEach((v) => {
@@ -106,43 +80,46 @@ export default {
           menu.classList.remove("aaa");
         });
       };
-
       if (name != "home") {
         header.classList.add("bg");
         navRemove();
         return;
       }
-
-      // const projectTop = document.querySelector(".project-container").offsetTop;
-      // const projectHeigh = document.querySelector(".project-container").offsetHeigh;
-      // console.log(projectTop,"aaa")
-      // console.log(projectHeigh,"ddd")
-
-      // const scrollBottom = document.documentElement.scrollHeight - window.innerHeight - 100
+      
       if (window.pageYOffset > pos[0].b) {
         header.classList.add("bg");
       } else {
         header.classList.remove("bg");
       }
 
-      if (window.pageYOffset < pos[0].b) {
+      if (
+        window.pageYOffset > pos[0].t * 0.8 &&
+        window.pageYOffset < pos[0].b
+      ) {
         navRemove();
         navAll[0].classList.add("aaa");
       }
-
-      if (window.pageYOffset > pos[1].t && window.pageYOffset < pos[1].b) {
+      if (
+        window.pageYOffset > pos[1].t * 0.8 &&
+        window.pageYOffset < pos[1].b
+      ) {
         navRemove();
         navAll[1].classList.add("aaa");
       }
-
-      if (window.pageYOffset > pos[2].t && window.pageYOffset < pos[2].b) {
+      if (
+        window.pageYOffset > pos[2].t * 0.8 &&
+        window.pageYOffset < pos[2].b
+      ) {
         navRemove();
         navAll[2].classList.add("aaa");
       }
     },
-
-    toggleMenu() {
-      this.isActive = !this.isActive;
+    back() {
+      if (this.$store.state.isActive) {
+        this.$router.push("/menulist");
+      } else {
+        this.$router.push("/");
+      }
     },
   },
 };
@@ -170,22 +147,10 @@ header {
       font-weight: 800;
     }
     nav {
-      width: 30%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
       font-size: 1rem;
-      // a {
-      //   font-weight: bold;
-      //   color: whitesmoke;
-      //   text-decoration: none;
-      //   &.router-link-exact-active {
-      //     background-color: antiquewhite;
-      //   }
-      // }
       .menu-trigger {
         background-color: transparent;
-        display: inline-block;
+        display: block;
         box-sizing: border-box;
         position: relative;
         width: 27px;
@@ -229,13 +194,39 @@ header {
           }
         }
       }
-
-      > div {
-        text-align: center;
-        cursor: pointer;
-        color: whitesmoke;
-        &.aaa {
-          color: red;
+      .bullets {
+        position: fixed;
+        top: 50%;
+        right: 65px;
+        width: 13px;
+        height: 74px;
+        > :nth-child(n) {
+          width: 8px;
+          height: 8px;
+          border-radius: 100%;
+          cursor: pointer;
+          background-color: rgba(128, 128, 128, 0.658);
+          &.aaa {
+            background-color: red;
+          }
+        }
+        > :nth-child(2) {
+          
+          margin-top: 20px;
+          cursor: pointer;
+          
+          &.aaa {
+            background-color: red;
+          }
+        }
+        > :nth-child(3) {
+          
+          margin-top: 20px;
+          cursor: pointer;
+          
+          &.aaa {
+            background-color: red;
+          }
         }
       }
     }
