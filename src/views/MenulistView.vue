@@ -6,7 +6,7 @@
           <router-link to="/" @click="toggleMenu" > Introduction </router-link>
         </li>
         <li>       
-          <router-link to="/Detail" @click="toggleMenu"> Project </router-link>
+          <router-link to="/Detail?id=0" @click="toggleMenu"> Project </router-link>
         </li>
         <li>
           <router-link to="/about" @click="toggleMenu"> About </router-link>
