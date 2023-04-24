@@ -57,7 +57,7 @@
       "url": "VIEW PROJECT",
       "homepage": "https://sychoi-foli.netlify.app/",
       "tools": ["vuejs", "sass"],
-      "img": "",
+      "img": "./img/portfolio-main.png",
       "webDesign": "Website design",
       "designText": "",
       "designImg": "",
