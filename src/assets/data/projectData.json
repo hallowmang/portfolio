@@ -52,18 +52,18 @@
     {
       "id": 3,
       "subtitle": "Portfolio",
-      "title": "포트폴리오",
-      "text": "vue를 사용하여 구축하였습니다. 간결하게 전달하고자 하는 것만 작성하여 깔끔하게 사이트를 만들었습니다.",
+      "title": "PORTFOLIO Website",
+      "text": "화려함 보다는 전달하는 메세지가 중요하다 생각하여, 심플하게 구성 했습니다. 또한, Vue로 구현하였으며, Vuex로 상태관리를 하였습니다.",
       "url": "VIEW PROJECT",
       "homepage": "https://sychoi-foli.netlify.app/",
       "tools": ["vuejs", "sass"],
       "img": "./img/portfolio-main.png",
       "webDesign": "Website design",
-      "designText": "",
-      "designImg": "",
-      "responsive": "",
-      "responsiveText": "",
-      "responsiveImg": ""
+      "designText": "첫 화면은 검정색과 하얀색으로 눈에 띄게 디자인 했으며,  전달하고 메세지만 바로 보여줄 수 있도록, 심플하게 디자인을 잡았습니다.",
+      "designImg": "./img/portfolio-all.png",
+      "responsive": "Responsive design",
+      "responsiveText": "많은 사용자가 스마트폰을 통한 브라우징을 선호한다는 점을 고려하여 모바일 버전도 설계했습니다.",
+      "responsiveImg": "./img/React-reponsive-design-group.png"
     },
     {
       "id": 4,

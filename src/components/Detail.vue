@@ -42,7 +42,7 @@
       <div class="clone-wrap">
         <div class="clone-title">
           <h2>{{ data.website[id].webDesign }}</h2>
-          <p>{{ data.website[id].designText }}.</p>
+          <p>{{ data.website[id].designText }}</p>
         </div>
         <div class="clone-homepage">
           <img :src="data.website[id].designImg" alt="" />

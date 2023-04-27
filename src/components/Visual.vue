@@ -55,8 +55,15 @@
           <swiper-slide>
             <router-link to="./Detail?id=0&&type=app" class="image">
               <img src="@/assets/img/moitnyang-start.png" alt="" />
-              <h3>NEXT.js project</h3>
+              <h3>Next.js project</h3>
               <p>Moitnyang</p>
+            </router-link>
+          </swiper-slide>
+          <swiper-slide>
+            <router-link to="./Detail?id=3" class="image">
+              <img src="@/assets/img/portfolio-mainpage.png" alt="" />
+              <h3>Vue project</h3>
+              <p>Portfolio</p>
             </router-link>
           </swiper-slide>
         </swiper>
@@ -106,11 +113,11 @@ export default {
           },
           768: {
             slidesPerView: 2,
-            spaceBetween: 20
+            spaceBetween: 20,
           },
-          1024:{
+          1024: {
             slidesPerView: 3,
-          }
+          },
         },
       },
     };
