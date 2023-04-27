@@ -257,7 +257,7 @@ export default {
       margin-top: 30px;
 
       &.learn-more {
-        width: 12%;
+        width: 15%;
         height: auto;
         font-size: 1.1rem;
       }
