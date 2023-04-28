@@ -188,7 +188,7 @@ export default {
     padding: 10% 0;
     .clone-title {
       width: 45%;
-      margin: 100px 0;
+      margin: 100px auto;
       h2 {
         font-size: 2.5rem;
         text-align: center;
@@ -196,7 +196,6 @@ export default {
       p {
         font-family: "Noto Sans KR", sans-serif;
         font-size: 1.25rem;
-        text-align: center;
         width: 70%;
         margin: 0 auto;
         margin-top: 3%;
@@ -233,6 +232,7 @@ export default {
         font-family: "Noto Sans KR", sans-serif;
         width: 70%;
         margin: 0 auto;
+        margin-top: 5%;
       }
     }
     .responsive-homepage {
@@ -316,7 +316,6 @@ export default {
         p {
           font-family: "Noto Sans KR", sans-serif;
           font-size: 1.25rem;
-          text-align: center;
           width: 90%;
           margin: 0 auto;
         }
@@ -445,7 +444,6 @@ export default {
         p {
           width: 100%;
           font-size: 1.4rem;
-          text-align: center;
           margin-top: 5%;
         }
       }

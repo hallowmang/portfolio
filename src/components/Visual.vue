@@ -159,11 +159,11 @@ export default {
   h1 {
     position: relative;
     padding: 100px 0;
-    font-size: 12rem;
+    font-size: 11rem;
     font-weight: 500;
     color: whitesmoke;
     width: 100%;
-    top: 150px;
+    top: 75px;
     line-height: 0.9;
     z-index: 9998;
     :nth-child(1) {
@@ -188,7 +188,7 @@ export default {
     transform: translate(-50%, 0);
   }
   .Images {
-    width: 15%;
+    width: 17%;
     position: absolute;
     top: 40%;
     left: 50%;

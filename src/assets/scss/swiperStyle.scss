@@ -31,7 +31,7 @@ body {
 
       /* Center slide text vertically */
       display: flex;
-      
+      justify-content: center;
     }
 
     .swiper-slide img {
@@ -59,12 +59,11 @@ body {
         p {
           font-size: 1.8rem;
         }
-  
+
         /* Center slide text vertically */
         display: flex;
-        
       }
-  
+
       .swiper-slide img {
         display: block;
         width: 100%;
@@ -88,14 +87,12 @@ body {
         p {
           font-size: 1.8rem;
         }
-  
+
         /* Center slide text vertically */
         display: flex;
-        
       }
-  
+
       .swiper-slide img {
-        
       }
     }
   }
