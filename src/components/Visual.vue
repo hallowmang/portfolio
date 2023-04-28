@@ -163,7 +163,7 @@ export default {
     font-weight: 500;
     color: whitesmoke;
     width: 100%;
-    top: 10%;
+    top: 15%;
     line-height: 0.9;
     z-index: 9998;
     :nth-child(1) {
@@ -500,7 +500,7 @@ export default {
     height: 100vh;
     h1 {
       font-size: 7.5rem;
-      top: 40%;
+      top: 30%;
       :nth-child(1) {
         padding-left: 4%;
       }
