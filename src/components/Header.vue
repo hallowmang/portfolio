@@ -50,9 +50,7 @@ export default {
     };
   },
   mounted() {
-    
     window.addEventListener("scroll", this.colorChangehandle);
-    
   },
   methods: {
     ...mapMutations(["toggleMenu"]),
@@ -85,7 +83,7 @@ export default {
         navRemove();
         return;
       }
-      
+
       if (window.pageYOffset > pos[0].b) {
         header.classList.add("bg");
       } else {
@@ -211,19 +209,17 @@ header {
           }
         }
         > :nth-child(2) {
-          
           margin-top: 20px;
           cursor: pointer;
-          
+
           &.aaa {
             background-color: red;
           }
         }
         > :nth-child(3) {
-          
           margin-top: 20px;
           cursor: pointer;
-          
+
           &.aaa {
             background-color: red;
           }
@@ -249,14 +245,10 @@ header {
         font-size: 1.5rem;
       }
       nav {
-        width: 40%;
         font-size: 1.2rem;
         .menu-trigger {
           width: 20px;
           height: 10px;
-
-          span {
-          }
 
           span:nth-of-type(2) {
             top: 6px;
@@ -272,9 +264,8 @@ header {
             }
           }
         }
-        a {
-        }
-        > div {
+        .bullets {
+          display: none;
         }
       }
     }
@@ -288,8 +279,6 @@ header {
   }
 
   header {
-    &.bg {
-    }
     .header-wrap {
       width: 80%;
       padding: 2% 0;
@@ -302,9 +291,6 @@ header {
         .menu-trigger {
           width: 20px;
           height: 10px;
-
-          span {
-          }
 
           span:nth-of-type(1) {
             top: 0;
@@ -331,8 +317,6 @@ header {
               transform: translateY(-7px) rotate(40deg);
             }
           }
-        }
-        a {
         }
         > div {
           display: none;

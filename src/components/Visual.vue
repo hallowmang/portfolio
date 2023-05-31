@@ -350,7 +350,6 @@ export default {
     height: 100vh;
     h1 {
       font-size: 12rem;
-      top: 34%;
       :nth-child(1) {
         padding-left: 7%;
       }
@@ -503,7 +502,6 @@ export default {
     height: 100vh;
     h1 {
       font-size: 7.5rem;
-      top: 30%;
       :nth-child(1) {
         padding-left: 4%;
       }
