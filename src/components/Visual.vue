@@ -163,7 +163,10 @@ export default {
     font-weight: 500;
     color: whitesmoke;
     width: 100%;
-    top: 15%;
+    max-width: 1600px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     line-height: 0.9;
     z-index: 9998;
     :nth-child(1) {
